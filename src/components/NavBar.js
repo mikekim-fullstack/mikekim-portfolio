@@ -5,6 +5,7 @@ import logo from '../assets/img/logo.svg'
 import linkedin from '../assets/img/nav-icon1.svg'
 import leetCode from '../assets/img/code-solid.svg'
 import github from '../assets/img/github.svg'
+import './NavBar.css'
 const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home')
     const [scrolled, setScrolled] = useState(false)
@@ -22,10 +23,10 @@ const NavBar = () => {
 
 
     return (
-        <Navbar expand="sm" className={scrolled ? 'scroll' : ''}>
+        <Navbar expand="lg" className={scrolled ? 'scroll' : ''}>
             <Container>
                 <Navbar.Brand href="#home">
-                    <img src={logo} alt='logo' />
+                    <img src={logo} alt='logo' width='100px' />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" >
                     <span className='navbar-toggler-icon'></span>
@@ -38,11 +39,11 @@ const NavBar = () => {
                     </Nav>
                     <span className='navbar-text'>
                         <div className='social-icon'>
-                            <a href='#'><img src={github} alt='github' width='18px' style={{ fill: 'currentColor' }} /></a>
+                            <a href='#'><img src={github} alt='github' /></a>
                             <a href='#'><img src={linkedin} alt='linkedin' /></a>
-                            <a href='#'><img src={leetCode} alt='leetcode' width='25px' /></a>
+                            <a href='#'><img src={leetCode} alt='leetcode' /></a>
                         </div>
-                        <button className='vvd' onClick={() => console.log('connect')} >
+                        <button className='vvd' onClick={() => console.log('connect Navbar')} >
                             Let's Connect
                         </button>
 
