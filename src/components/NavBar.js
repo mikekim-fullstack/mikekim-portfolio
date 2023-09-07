@@ -12,7 +12,9 @@ const NavBar = () => {
 
     useEffect(() => {
         const onScroll = () => {
+
             let isScrolled = window.scrollY > 50 ? true : false
+            // console.log('scrolled', window.scrollY, 'isScrolled', isScrolled)
             setScrolled(isScrolled)
         }
         window.addEventListener('scroll', onScroll)
@@ -23,7 +25,7 @@ const NavBar = () => {
 
 
     return (
-        <Navbar expand="lg" className={scrolled ? 'scroll' : ''}>
+        <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
             <Container>
                 <Navbar.Brand href="#home">
                     <img src={logo} alt='logo' width='100px' />
