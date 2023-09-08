@@ -6,6 +6,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects'
 import Contact from './components/Contact';
 function App() {
+  // console.log('process.env.REACT_APP_GMAIL_AUTH', process.env.REACT_APP_GMAIL_AUTH)
   return (
     <div className="App">
       <NavBar />
