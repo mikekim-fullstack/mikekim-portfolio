@@ -38,6 +38,7 @@ const NavBar = () => {
                         <Nav.Link href="#home" className={activeLink === 'home' ? 'active' : ''} onClick={() => setActiveLink('home')}>Home</Nav.Link>
                         <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active' : ''} onClick={() => setActiveLink('skills')}>Skills</Nav.Link>
                         <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active' : ''} onClick={() => setActiveLink('projects')}>Projects</Nav.Link>
+                        <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active' : ''} onClick={() => setActiveLink('contact')}>Contact</Nav.Link>
                     </Nav>
                     <span className='navbar-text'>
                         <div className='social-icon'>
