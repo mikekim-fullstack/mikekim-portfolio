@@ -84,6 +84,7 @@
 }
 
 .background-image-right {
+    /* border: 1px solid pink; */
     top: 20%;
     position: absolute;
     bottom: 0;
