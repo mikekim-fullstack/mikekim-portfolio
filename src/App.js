@@ -5,6 +5,7 @@ import Banner from './components/Banner'
 import Skills from './components/Skills';
 import Projects from './components/Projects'
 import Contact from './components/Contact';
+import Footer from './components/Footer'
 function App() {
   // console.log('process.env.REACT_APP_GMAIL_AUTH', process.env.REACT_APP_GMAIL_AUTH)
   return (
@@ -14,6 +15,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 }
