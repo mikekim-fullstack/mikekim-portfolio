@@ -19,7 +19,7 @@ function Footer() {
                             <a href='#'> <img src={linkedin} alt='linkedin' /></a>
                             <a href='#'><img src={leetCode} alt='leetCode' /></a>
                         </div>
-                        <p>CopyRight 2023. All Right Reserved.</p>
+                        <p>All Right Reserved Mike Kim @CopyRight 2023.</p>
                     </Col>
                 </Row>
 

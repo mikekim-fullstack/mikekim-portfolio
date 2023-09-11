@@ -2,6 +2,11 @@ import React, { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { ArrowRightCircle } from 'react-bootstrap-icons'
 import headerImg from '../assets/img/header-img.svg'
+import emailUrl from '../assets/img/mail.svg'
+import phoneUrl from '../assets/img/call.svg'
+import addressUrl from '../assets/img/location.svg'
+// import mikekimUrl from '../assets/img/mikekim.png'
+import mikekimUrl from '../assets/img/MIKEKIM.JPG'
 import './Banner.css'
 const Banner = () => {
 
@@ -10,7 +15,7 @@ const Banner = () => {
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const [index, setIndex] = useState(1);
-    const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+    const toRotate = ["Front End Developer", "React JS Developer", "Web Developer"];
     const period = 2000;
 
     useEffect(() => {
@@ -52,15 +57,20 @@ const Banner = () => {
                     <Col sx={12} md={6} xl={7}>
                         <span className='tagline'>Welcome to my portfolio</span>
                         <h1>
-                            {`Hi I'm webcoded `}
+                            {`Hello I'm Mike Kim `}
                             <span className='wrap'>{text}</span>
                         </h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate cupiditate tempore expedita alias harum recusandae eveniet animi aliquid laudantium maxime, fugiat deleniti mollitia totam illum magnam sunt labore dolorum amet.</p>
-                        <button onClick={() => console.log('connect Banner')}>Let's connect <ArrowRightCircle /></button>
+                        {/* <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate cupiditate tempore expedita alias harum recusandae eveniet animi aliquid laudantium maxime, fugiat deleniti mollitia totam illum magnam sunt labore dolorum amet.</p> */}
+                        <ul className='my-info'>
+                            <li className="wow fadeInUp" ><img src={emailUrl} alt='email' /><a href="mailto:">mikekim.fullstack@gmail.com</a></li>
+                            <li className="wow fadeInUp" ><img src={phoneUrl} alt='phone' /><a href="callto:">+1 647 636 6379</a></li>
+                            <li className="wow fadeInUp" ><img src={addressUrl} alt='address' /><address>Toronto, Ontario, Canada</address></li>
+                        </ul>
+                        <button className='btn-download' onClick={() => console.log('connect Banner')}>Download My CV <ArrowRightCircle /></button>
 
                     </Col >
                     <Col sx={12} md={6} xl={5}>
-                        <img src={headerImg} width={'100%'} alt='Header Img' />
+                        <img className='ani-img' src={mikekimUrl} alt='Header Img' />
                     </Col>
                 </Row>
             </Container>

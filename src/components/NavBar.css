@@ -20,8 +20,29 @@ nav.navbar.scrolled {
 
 nav.navbar .navbar-brand {
     margin-right: 10px;
-    width: 9%;
 }
+
+.navbar-brand .logo {
+    padding: 10px 20px;
+    border: 0.5px rgb(51, 4, 51) white;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 200px; */
+    gap: 5px;
+    background: linear-gradient(90deg, rgba(51, 2, 51, 1) 50%, rgba(51, 2, 51, 0.5) 90%);
+
+}
+
+
+#mk-collapsed {
+    /* border: 1px solid hotpink; */
+    padding-bottom: 0px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
+}
+
 
 nav.navbar .navbar-nav .nav-link {
     font-weight: 400;
@@ -32,9 +53,14 @@ nav.navbar .navbar-nav .nav-link {
     opacity: 0.75;
 }
 
-nav.navbar .navbar-nav a:hover,
-nav.navbar .navbar-nav a.active {
+nav.navbar .navbar-nav a:hover {
+    color: turquoise !important;
     opacity: 1;
+}
+
+nav.navbar .navbar-nav a.activated {
+    opacity: 1;
+    font-weight: 500;
 }
 
 span.navbar-text {
@@ -134,11 +160,20 @@ span.navbar-text {
     position: absolute;
 }
 
+nav.navbar .navbar-toggler.collapsed {
+    /* padding-bottom: 0; */
+}
+
+nav.navbar .navbar-toggler {
+    /* padding-bottom: 20px; */
+}
+
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
     outline: none;
     box-shadow: none;
     opacity: 1;
+
 }
 
 nav.navbar .navbar-toggler-icon {
@@ -187,3 +222,37 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
 nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     border-color: transparent;
 } */
+
+
+
+@media (max-width:1200px) {
+
+
+    span.navbar-text {
+        display: none;
+    }
+}
+
+@media (max-width:1058px) {
+
+
+    .navbar-brand .logo img {
+        width: 80px;
+    }
+}
+
+@media (max-width:990px) {
+    #mk-collapsed {
+        padding-bottom: 20px;
+    }
+
+    nav.navbar .navbar-nav .nav-link {
+        padding: 2px 25px;
+        font-weight: 200;
+
+    }
+
+    nav.navbar .navbar-nav a:hover {
+        color: yellowgreen;
+    }
+}
