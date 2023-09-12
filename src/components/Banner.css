@@ -138,21 +138,42 @@ span.wrap {
     border-right: 0.08em solid #666;
 }
 
-@media (max-width:768px) {
+@media (max-width:990px) {
+
     .banner h1 {
 
         height: 150px;
         font-size: 3rem;
         font-weight: 600;
-
-
     }
+
+    .banner button {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    ol,
+    ul {
+        padding: 0 !important;
+    }
+}
+
+@media (max-width:768px) {
+    /* .banner h1 {
+
+        height: 150px;
+        font-size: 3rem;
+        font-weight: 600;
+    } */
 
     .banner .my-info {
         align-items: center;
+
     }
 
     .btn-download {
         margin: 0 auto;
     }
+
+
 }

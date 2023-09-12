@@ -1,0 +1,64 @@
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.circle-prograss-bar {
+    display: inline-block;
+    margin: 10px;
+}
+
+.circle-prograss-bar .meter {
+    --fg: #32413e 50%;
+    --bg: rgba(11, 206, 175, 0.5);
+    --color: rgb(11, 206, 175);
+    --size: 150px;
+    font-family: 'Cormorant Garamond', serif;
+
+    /* font: 800 40px system-ui; */
+    padding: 2rem;
+
+    width: var(--size);
+    height: var(--size);
+    font-size: calc(var(--size)/6);
+    border-radius: 50%;
+
+
+    margin-bottom: 5px;
+
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(closest-side, var(--fg) 90%, transparent 0 99.9%, var(--color) 0),
+        conic-gradient(var(--color) calc(var(--num) * 1%), var(--bg) 0);
+    color: white;
+
+    /* animation: counter 5s infinite alternate ease-in-out; */
+    /* animation: counter 3s 1 forwards;
+    counter-reset: num var(--num); */
+}
+
+
+.circle-prograss-bar .meter::after {
+    content: counter(num) '%';
+}
+
+.circle-prograss-bar .meter.animation {
+    animation: counter 2s 1 forwards;
+    counter-reset: num var(--num);
+}
+
+.circle-prograss-bar p {
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes counter {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--value);
+    }
+}

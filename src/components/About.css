@@ -1,0 +1,36 @@
+.about .col p {
+    color: #B8B8B8;
+    font-size: 1.2rem;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    text-align: left;
+    /* margin: 14px 0 75px 0; */
+}
+
+.about .col p.thanks {
+    color: #717171;
+    font-size: 1.2rem;
+    letter-spacing: 0.8px;
+    /* line-height: 1.5em; */
+    text-align: center;
+    /* margin: 14px 0 75px 0; */
+}
+
+.about .col {
+    margin-bottom: 50px;
+}
+
+.about .col p a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.about .col p a:hover {
+    text-decoration: none;
+    /* color: yellowgreen; */
+    font-weight: 500;
+}
+
+.about .col p a:visited {
+    text-decoration: none;
+}

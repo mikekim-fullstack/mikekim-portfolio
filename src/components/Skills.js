@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -7,27 +7,22 @@ import meter2 from '../assets/img/meter2.svg'
 import meter3 from '../assets/img/meter3.svg'
 import meter4 from '../assets/img/meter1.svg'
 import colorSharp from '../assets/img/color-sharp.png'
+import CircleProgressBar from './CircleProgressBar';
+
 import './Skills.css'
 const Skills = () => {
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
+    let progressBarRef = useRef(null)
+    const [progressBarVisible, setProgressBarVisible] = useState()
+
+    useEffect(() => {
+        // document.documentElement.style.setProperty('--value', 90)
+        // console.log(document.styleSheets)
+        const observer = new IntersectionObserver((entries) => setProgressBarVisible(entries[0].isIntersecting))
+        observer.observe(progressBarRef.current)
+        return () => { observer.unobserve(progressBarRef.current) }
+    }, [])
+
+
     return (
         <section id='skills' className='skills'>
             <Container>
@@ -35,30 +30,19 @@ const Skills = () => {
                     <Col className='skill-bx'>
                         <h2>Skills</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br></br> Vel explicabo magni possimus incidunt a eos voluptatem numquam quasi odit fugit officiis quidem cum voluptate saepe praesentium, amet nostrum? Ad, voluptate?</p>
-                        <Carousel responsive={responsive} infinite={true} className='skill-slider'>
-                            <div className='item'>
-                                <img src={meter1} alt='image' />
-                                <h5>Web Development</h5>
-                            </div>
-                            <div className='item'>
-                                <img src={meter2} alt='image' />
-                                <h5>Brand Identity</h5>
-                            </div>
-                            <div className='item'>
-                                <img src={meter3} alt='image' />
-                                <h5>Logo Design</h5>
-                            </div>
-                            <div className='item'>
-                                <img src={meter4} alt='image' />
-                                <h5>Web Design</h5>
-                            </div>
-                        </Carousel>
+
+                        <div className='prograss-bar animation' ref={progressBarRef}>
+                            <CircleProgressBar start={progressBarVisible} title={'HTML'} value={85} size={'150'} color={'rgba(255,105,180,1)'} />
+                            <CircleProgressBar start={progressBarVisible} title={'CSS'} value={85} size={'150'} color={'rgba(255,105,180,1)'} />
+                            <CircleProgressBar start={progressBarVisible} title={'JavaScript'} value={90} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                            <CircleProgressBar start={progressBarVisible} title={'React JS'} value={88} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                        </div>
                     </Col>
                 </Row>
             </Container>
 
             <img className='background-image-left' src={colorSharp} />
-        </section>
+        </section >
     )
 }
 

@@ -1,0 +1,44 @@
+.read-more-content {
+    transition: all 1s ease-in-out;
+}
+
+
+.read-more-content.collapsed {
+
+    height: 200px;
+    overflow: hidden;
+    /* Make sure to hide any content outside the clipping path */
+    margin-bottom: 20px;
+
+    background-image: linear-gradient(to bottom, transparent, #000);
+    color: transparent;
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+    mask-image: linear-gradient(to bottom, black, transparent);
+
+}
+
+.read-more-content+.info {
+    text-align: center !important;
+
+    /* color:  !important; */
+}
+
+.read-more-content+.info:hover {
+    cursor: pointer;
+    font-weight: 500;
+
+}
+
+.read-more-content.expanded {
+    height: auto;
+
+}
+
+/* @property --readme-value {
+    initial-value: 200px;
+    syntax: "<integer>";
+    inherits: false;
+}
+@keyframes animation-readme{
+
+} */
