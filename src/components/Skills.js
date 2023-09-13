@@ -45,7 +45,7 @@ const Skills = () => {
                             <StickProgressBar start={progressBarVisible} title={'Django'} value={85} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
                             <StickProgressBar start={progressBarVisible} title={'SQL'} value={75} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
                             <p>Source Code Control</p>
-                            <StickProgressBar start={progressBarVisible} title={'Git'} value={85} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <StickProgressBar start={progressBarVisible} title={'Git/hub'} value={85} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
                             <p>Development IDE</p>
                             <StickProgressBar start={progressBarVisible} title={'VS Code'} value={90} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
                             <StickProgressBar start={progressBarVisible} title={'VS C++'} value={87} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />

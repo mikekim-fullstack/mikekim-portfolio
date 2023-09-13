@@ -53,9 +53,9 @@ const Projects = () => {
                     <Col>
                         <h2>Projects</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br></br>Atque distinctio ducimus corporis eum, exercitationem, obcaecati quae commodi perspiciatis ipsum voluptate hic. Et quia iste incidunt veniam cumque distinctio nostrum quidem?</p>
+
                         <Tab.Container id='projects-tabs' defaultActiveKey='first'>
-                            <Nav variant="pills" className='nav-pills mb-5 justy
-                        fy-conent-center align-items-center' id='pills-tab'>
+                            <Nav variant="pills" className='nav-pills mb-5 justyfy-conent-center align-items-center' id='pills-tab'>
                                 <Nav.Item>
                                     <Nav.Link eventKey='first'>Tab 1</Nav.Link>
                                 </Nav.Item>
@@ -68,13 +68,18 @@ const Projects = () => {
                             </Nav>
                             <Tab.Content>
                                 <Tab.Pane eventKey={'first'}>
+                                    {
+                                        console.log('clicked the first tab')
+                                    }
                                     <Row>
                                         {
                                             projects.map((project) => (<ProjectCards key={project.id} {...project} />))
                                         }
                                     </Row>
                                 </Tab.Pane>
-                                <Tab.Pane eventKey={'second'} >`Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque esse porro corporis iusto alias labore neque possimus eum at.`</Tab.Pane>
+                                <Tab.Pane eventKey={'second'} >
+                                    {console.log('clicked the second tab')}
+                                    `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque esse porro corporis iusto alias labore neque possimus eum at.`</Tab.Pane>
                                 <Tab.Pane eventKey={'third'} >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo ipsam accusamus cupiditate libero quaerat suscipit repellendus placeat eveniet odit nulla.</Tab.Pane>
                             </Tab.Content>
                         </Tab.Container>

@@ -34,3 +34,16 @@
 .about .col p a:visited {
     text-decoration: none;
 }
+
+@media (max-width:768px) {
+    .about .col p {
+        text-align: center;
+    }
+}
+
+/* @media (max-width:280px) {
+    .about .col p {
+        text-align: center;
+    }
+
+} */

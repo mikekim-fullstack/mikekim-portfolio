@@ -30,8 +30,13 @@
     font-weight: 700;
     letter-spacing: 0.8px;
     line-height: 1;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: block;
+}
+
+span.wrap {
+    color: aqua;
+    font-size: 4rem;
 }
 
 .banner p {
@@ -78,10 +83,7 @@
 
 }
 
-span.wrap {
-    color: aqua;
-    font-size: 3rem;
-}
+
 
 .my-info {
     list-style: none;
@@ -144,7 +146,13 @@ span.wrap {
 
         height: 150px;
         font-size: 3rem;
-        font-weight: 600;
+        font-weight: 500;
+        margin-bottom: 50px;
+    }
+
+    span.wrap {
+        color: aqua;
+        font-size: 3rem;
     }
 
     .banner button {
@@ -159,12 +167,22 @@ span.wrap {
 }
 
 @media (max-width:768px) {
-    /* .banner h1 {
+    .banner {
+        padding-top: 100px;
+    }
+
+    .banner h1 {
 
         height: 150px;
-        font-size: 3rem;
-        font-weight: 600;
-    } */
+        font-size: 2.5rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    span.wrap {
+        color: aqua;
+        font-size: 2.5rem;
+    }
 
     .banner .my-info {
         align-items: center;
@@ -174,6 +192,54 @@ span.wrap {
     .btn-download {
         margin: 0 auto;
     }
+
+}
+
+@media (max-width:348px) {
+
+    .banner .tagline {
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        padding: 8px 8px;
+        background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        font-size: 18px;
+    }
+
+    .banner h1 {
+
+        height: 150px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    span.wrap {
+        color: aqua;
+        font-size: 1.5rem;
+    }
+
+    .my-info li img {
+        width: 25px;
+        margin: 1px;
+    }
+
+    .my-info a {
+        /* text-decoration: none;
+        color: rgb(174, 172, 172) !important; */
+        font-size: 1rem;
+
+        /* border: 1px solid white; */
+    }
+
+
+    .banner h1 {
+
+        height: 120px;
+
+    }
+
+    /* ------------- */
 
 
 }

@@ -2,6 +2,7 @@ nav.navbar {
     /* border: 1px solid white; */
     padding: 18px 0;
     position: fixed;
+    min-width: 280px !important;
     width: 100%;
     top: 0;
     z-index: 9999;
