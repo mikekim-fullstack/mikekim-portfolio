@@ -9,6 +9,8 @@
     margin: 10px;
 }
 
+
+
 .circle-prograss-bar .meter {
     --fg: #32413e 50%;
     --bg: rgba(11, 206, 175, 0.5);
@@ -17,7 +19,7 @@
     font-family: 'Cormorant Garamond', serif;
 
     /* font: 800 40px system-ui; */
-    padding: 2rem;
+    /* padding: 2rem; */
 
     width: var(--size);
     height: var(--size);
@@ -45,15 +47,21 @@
 }
 
 .circle-prograss-bar .meter.animation {
-    animation: counter 2s 1 forwards;
+    animation: animation-circular-prograsive-bar 2s 1 forwards;
     counter-reset: num var(--num);
 }
 
-.circle-prograss-bar p {
+.circle-prograss-bar .title {
     font-family: 'Poppins', sans-serif;
+    color: #e3e3e3;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 10px 0 24px 0;
 }
 
-@keyframes counter {
+@keyframes animation-circular-prograsive-bar {
     from {
         --num: 0;
     }

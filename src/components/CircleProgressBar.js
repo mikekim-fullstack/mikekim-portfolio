@@ -5,7 +5,7 @@ const CircleProgressBar = ({ title, value, size, color, bgColor, start }) => {
     useEffect(() => {
 
         // Change only alpha of bgColor if it is not provided...
-        if (!bgColor) {
+        if (!bgColor && color) {
             let bg = color.split(',')
             if (bg.length === 4) {
                 bg[3] = '0.5)'

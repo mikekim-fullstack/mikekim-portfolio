@@ -20,11 +20,12 @@
 }
 
 .skill-bx p {
-    color: #B8B8B8;
+    color: #e3e3e3;
     font-size: 1.2rem;
+    font-weight: 300;
     letter-spacing: 0.8px;
     line-height: 1.5em;
-    margin: 14px 0 75px 0;
+    margin: 50px 0 24px 0;
 
 }
 
@@ -47,7 +48,7 @@
     left: 0;
     width: 40%;
     z-index: -44;
-    ;
+
 }
 
 /* ----------------- */

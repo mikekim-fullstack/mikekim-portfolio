@@ -1,0 +1,85 @@
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.stick-progress-bar {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.stick-progress-bar .title {
+    width: 100px;
+    color: #B8B8B8;
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+    line-height: 1;
+    text-align: left;
+    padding-right: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stick-progress-bar .meter {
+    /* display: block; */
+
+    --bg: #32413e 50%;
+    --color: rgb(11, 206, 175);
+    --size: 1rem;
+
+    height: var(--size);
+    width: 100%;
+    background: var(--bg);
+    display: inline-block;
+    position: relative;
+    align-items: center;
+}
+
+.stick-progress-bar .meter.animation>div {
+    animation: animation-stick-prograsive-bar 2s 1 forwards;
+    counter-reset: num1 var(--num);
+}
+
+
+.stick-progress-bar .meter>div {
+    --value: 95;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: calc(var(--size) * 0.8);
+    font-weight: 500;
+
+    height: 100%;
+    width: calc(var(--num) *1%);
+
+    background: var(--color);
+    text-align: right;
+    padding-right: calc(var(--size)*1.5);
+    /* counter-reset: num1 var(--num); */
+    /* animation: animation-stick-prograsive-bar 2s 1 forwards; */
+    /* color: black; */
+    color: black;
+
+}
+
+.stick-progress-bar .meter>div::before {
+    content: counter(num1) '%';
+    position: absolute;
+    top: calc(50% - var(--size)*0.08);
+    transform: translateY(-50%);
+}
+
+.stick-progress-bar .meter>div::after {
+
+    width: 100%;
+}
+
+@keyframes animation-stick-prograsive-bar {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: var(--value);
+    }
+}

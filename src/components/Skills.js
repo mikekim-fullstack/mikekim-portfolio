@@ -8,6 +8,7 @@ import meter3 from '../assets/img/meter3.svg'
 import meter4 from '../assets/img/meter1.svg'
 import colorSharp from '../assets/img/color-sharp.png'
 import CircleProgressBar from './CircleProgressBar';
+import StickProgressBar from './StickProgressBar';
 
 import './Skills.css'
 const Skills = () => {
@@ -29,14 +30,28 @@ const Skills = () => {
                 <Row >
                     <Col className='skill-bx'>
                         <h2>Skills</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br></br> Vel explicabo magni possimus incidunt a eos voluptatem numquam quasi odit fugit officiis quidem cum voluptate saepe praesentium, amet nostrum? Ad, voluptate?</p>
+                        {/* <p>Computer Programming Languages</p> */}
 
                         <div className='prograss-bar animation' ref={progressBarRef}>
+                            <p>Computer Programming Languages</p>
                             <CircleProgressBar start={progressBarVisible} title={'HTML'} value={85} size={'150'} color={'rgba(255,105,180,1)'} />
                             <CircleProgressBar start={progressBarVisible} title={'CSS'} value={85} size={'150'} color={'rgba(255,105,180,1)'} />
                             <CircleProgressBar start={progressBarVisible} title={'JavaScript'} value={90} size={'150'} color={'rgba(11, 206, 175,1)'} />
                             <CircleProgressBar start={progressBarVisible} title={'React JS'} value={88} size={'150'} color={'rgba(11, 206, 175,1)'} />
+
+                            <StickProgressBar start={progressBarVisible} title={'NodeJS'} value={80} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <StickProgressBar start={progressBarVisible} title={'C++'} value={90} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <StickProgressBar start={progressBarVisible} title={'Python'} value={85} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <StickProgressBar start={progressBarVisible} title={'Django'} value={85} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <StickProgressBar start={progressBarVisible} title={'SQL'} value={75} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <p>Source Code Control</p>
+                            <StickProgressBar start={progressBarVisible} title={'Git'} value={85} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <p>Development IDE</p>
+                            <StickProgressBar start={progressBarVisible} title={'VS Code'} value={90} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <StickProgressBar start={progressBarVisible} title={'VS C++'} value={87} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                            <StickProgressBar start={progressBarVisible} title={'QT C++'} value={88} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
                         </div>
+
                     </Col>
                 </Row>
             </Container>
