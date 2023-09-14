@@ -68,9 +68,7 @@ const Projects = () => {
                             </Nav>
                             <Tab.Content>
                                 <Tab.Pane eventKey={'first'}>
-                                    {
-                                        console.log('clicked the first tab')
-                                    }
+
                                     <Row>
                                         {
                                             projects.map((project) => (<ProjectCards key={project.id} {...project} />))
@@ -78,7 +76,7 @@ const Projects = () => {
                                     </Row>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey={'second'} >
-                                    {console.log('clicked the second tab')}
+
                                     `Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur eaque esse porro corporis iusto alias labore neque possimus eum at.`</Tab.Pane>
                                 <Tab.Pane eventKey={'third'} >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo ipsam accusamus cupiditate libero quaerat suscipit repellendus placeat eveniet odit nulla.</Tab.Pane>
                             </Tab.Content>

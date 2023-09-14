@@ -9,6 +9,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects'
 import Contact from './components/Contact';
 import Footer from './components/Footer'
+import { Container, Row, Col } from 'react-bootstrap';
 function App() {
   // console.log('process.env.REACT_APP_GMAIL_AUTH', process.env.REACT_APP_GMAIL_AUTH)
   return (
@@ -18,7 +19,9 @@ function App() {
       <About />
       <Skills />
       <Experience />
+
       <Education />
+
       <Projects />
       <Contact />
       <Footer />

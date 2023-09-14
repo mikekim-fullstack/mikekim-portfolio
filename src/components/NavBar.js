@@ -34,7 +34,7 @@ const NavBar = () => {
 
             // Highlightening the menu items according to current scrolling position...
             for (let i = sectionOffsets.length - 1; i >= 0; i--) {
-                if (window.scrollY >= sectionOffsets[i].offsetTop - 100) {
+                if (sectionOffsets[i]?.offsetTop && window.scrollY >= sectionOffsets[i].offsetTop - 100) {
                     setActiveLink(menuItemIds[i]);
                     break;
                 }

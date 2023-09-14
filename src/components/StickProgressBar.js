@@ -11,7 +11,7 @@ const StickProgressBar = ({ title, value, size, color, bgColor, start }) => {
                 bg[3] = '0.5)'
                 setNewBgColor(bg.join(','))
             }
-            console.log('bgColor', bg.join(','))
+            // console.log('bgColor', bg.join(','))
         }
     }, [])
     return (

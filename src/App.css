@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;1,100&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;1,100&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,400&display=swap');
 
 /* Custom fonts: Centra */
 @font-face {
@@ -61,11 +61,23 @@ ul {
   margin: 0;
   padding: 0;
   line-height: normal;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
+}
+
+.experience_education {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width:768px) {
+  .experience_education {
+    display: block;
+  }
 }
 
 /* img {
@@ -98,7 +110,7 @@ button {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;

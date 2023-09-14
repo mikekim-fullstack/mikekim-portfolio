@@ -1,0 +1,105 @@
+.timeline-card {
+    --card-bg-color: rgb(34 57 53 / 40%);
+    --card-bg-title-color: rgba(51, 101, 93, 0.4);
+    --card-company-color: rgb(0, 215, 208);
+    --card-company-hover-color: rgb(0, 238, 230);
+    --card-description-color: rgb(106, 194, 179);
+    --card-period-color: #b8b8b8;
+    --card-list-color: #b8b8b8;
+    --card-responsibility-color: #cbcaca;
+    --card-min-width: 500px;
+
+    min-width: var(--card-min-width);
+    /* min-width: 300px; */
+    margin: 10px 10px 30px;
+    padding: 10px 30px;
+    border-radius: 4px;
+    background-color: var(--card-bg-color);
+    -webkit-box-shadow: 0px 10px 20px 4px rgb(17 13 18);
+    box-shadow: 0px 10px 20px 4px rgb(17 13 18);
+    position: relative;
+    font-family: 'poppins', sans-serif;
+    text-align: left;
+
+
+}
+
+.timeline-card::before {
+    content: '';
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    background-color: var(--card-bg-title-color);
+    z-index: -1;
+}
+
+.timeline-card .role {
+
+    width: 100%;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+
+}
+
+.timeline-card .company {
+    color: var(--card-company-color);
+    display: block;
+    font-size: 1.4rem;
+    /* margin-bottom: 10px; */
+}
+
+.timeline-card .company:hover {
+    color: var(--card-company-hover-color);
+}
+
+.timeline-card .description {
+    color: var(--card-description-color);
+    font-size: 1.1rem;
+    /* line-height: 1.4; */
+}
+
+.timeline-card .period {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: right;
+    color: var(--card-period-color);
+}
+
+.timeline-card .responsibility {
+    color: var(--card-responsibility-color);
+}
+
+
+
+.timeline-card .lists {
+
+    color: var(--card-list-color);
+}
+
+.timeline-card .lists li {
+    margin-bottom: 10px;
+}
+
+@media (max-width:768px) {
+    .timeline-card {
+
+        --card-min-width: 0;
+
+
+    }
+}
+
+@media (max-width:348px) {
+    .timeline-card::before {
+        height: 3.5rem;
+    }
+
+    .timeline-card .role {
+        font-size: 1rem;
+        margin-bottom: 20px;
+
+    }
+}
