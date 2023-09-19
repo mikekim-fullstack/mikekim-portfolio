@@ -16,6 +16,7 @@
 
     background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
     border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0 1rem 0 1rem;
     font-size: 20px;
     margin-bottom: 50px;
     /* inline-block: Takes only content space not a available space 
@@ -25,6 +26,7 @@
 
 .banner h1 {
     /* border: 1px solid white; */
+    font-family: var(--centra-font);
     height: 200px;
     font-size: 4rem;
     font-weight: 700;
@@ -195,7 +197,8 @@ span.wrap {
 
 }
 
-@media (max-width:348px) {
+/* @media (max-width:348px) { */
+@media (max-width:400px) {
 
     .banner .tagline {
         font-weight: 700;

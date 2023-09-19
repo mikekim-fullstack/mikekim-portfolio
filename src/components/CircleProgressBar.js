@@ -14,7 +14,7 @@ const CircleProgressBar = ({ title, value, size, color, bgColor, start }) => {
         }
     }, [])
     return (
-        <div className='circle-prograss-bar'>
+        <div className='circle-progress-bar'>
             <div className={`meter ${start ? 'animation' : ''}`} style={{ '--value': value, '--size': `${size}px`, '--color': color, '--bg': newBgColor }}></div>
             <p className='title'>{title}</p>
         </div>

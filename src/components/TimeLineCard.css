@@ -92,7 +92,8 @@
     }
 }
 
-@media (max-width:348px) {
+/* @media (max-width:348px) { */
+@media (max-width:400px) {
     .timeline-card::before {
         height: 3.5rem;
     }

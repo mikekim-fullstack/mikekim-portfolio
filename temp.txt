@@ -1,0 +1,360 @@
+
+nav.navbar {
+    /* border: 1px solid white; */
+    padding: 18px 0;
+    position: fixed;
+    min-width: 280px !important;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition: 0.32s ease-in-out;
+}
+
+nav.navbar.scrolled {
+    padding: 0px 0;
+    /* background: -webkit-gradient(linear, to right, red, yellow);
+    background: -webkit-linear-gradient(to right, red, yellow);
+    background: -moz-linear-gradient(to right, red, yellow); */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
+    /* background-color: black; */
+}
+
+
+nav.navbar .navbar-brand {
+    margin-right: 10px;
+}
+
+.navbar-brand .logo {
+    padding: 10px 20px;
+    border: 0.5px rgb(51, 4, 51) white;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 200px; */
+    gap: 5px;
+    background: linear-gradient(90deg, rgba(51, 2, 51, 1) 50%, rgba(51, 2, 51, 0.5) 90%);
+
+}
+
+
+#mk-collapsed {
+    /* border: 1px solid hotpink; */
+    padding-bottom: 0px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8));
+}
+
+
+nav.navbar .navbar-nav .nav-link {
+    font-weight: 400;
+    color: #fff !important;
+    letter-spacing: 0.8px;
+    padding: 0 25px;
+    font-size: 18px;
+    opacity: 0.75;
+}
+
+nav.navbar .navbar-nav a:hover {
+    color: turquoise !important;
+    opacity: 1;
+}
+
+nav.navbar .navbar-nav a.activated {
+    opacity: 1;
+    font-weight: 500;
+}
+
+span.navbar-text {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 14px;
+}
+
+.social-icon a {
+    width: 42px;
+    height: 42px;
+    background: rgba(217, 217, 217, 0.1);
+    border-radius: 50%;
+    margin-right: 6px;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* Align-center image using flex */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.social-icon a::before {
+    /* Make this conent to scale 0 so that currently not visible. */
+    content: "";
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+.social-icon a:hover::before {
+    position: absolute;
+    transform: scale(1);
+}
+
+.social-icon a img {
+    width: 40%;
+    z-index: 1;
+    transition: 0.3s ease-in-out;
+}
+
+.social-icon a:hover img {
+    /* Invert color */
+    filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+
+.navbar-text button {
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 18px 34px;
+    font-size: 18px;
+    margin-left: 18px;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-text button span {
+    z-index: 1;
+}
+
+.navbar-text button::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar-text button:hover {
+    color: #121212;
+}
+
+.navbar-text button:hover::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+nav.navbar .navbar-toggler.collapsed {
+    /* padding-bottom: 0; */
+}
+
+nav.navbar .navbar-toggler {
+    /* padding-bottom: 20px; */
+}
+
+nav.navbar .navbar-toggler:active,
+nav.navbar .navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+    opacity: 1;
+
+}
+
+nav.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    opacity: 0.8;
+}
+
+nav.navbar .navbar-toggler-icon:active {
+
+    /* border-bottom: 2px solid #fff; */
+    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); */
+
+}
+
+nav.navbar .navbar-toggler-icon:after,
+nav.navbar .navbar-toggler-icon:before {
+    /* width: 24px;
+    position: absolute;
+    height: 2px;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    content: '';
+    z-index: 2;
+    transition: all 300ms linear; */
+    transition: all 300ms linear;
+}
+
+/* 
+nav.navbar .navbar-toggler-icon:after {
+    top: 8px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+    transform: rotate(45deg);
+    background-color: #fff;
+    height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+    transform: translateY(8px) rotate(-45deg);
+    background-color: #fff;
+    height: 2px;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    border-color: transparent;
+} */
+
+
+
+@media (max-width:1200px) {
+
+
+    span.navbar-text {
+        display: none;
+    }
+}
+
+@media (max-width:1058px) {
+
+
+    .navbar-brand .logo img {
+        width: 80px;
+    }
+}
+
+@media (max-width:990px) {
+    #mk-collapsed {
+        padding-bottom: 20px;
+    }
+
+    nav.navbar .navbar-nav .nav-link {
+        padding: 2px 25px;
+        font-weight: 200;
+
+    }
+
+    nav.navbar .navbar-nav a:hover {
+        color: yellowgreen;
+    }
+}
+
+
+const NavBar1 = () => {
+    // const [activeItem, setActiveItem] = useState('');// Scroll highlighting on menu items
+
+    const [activeLink, setActiveLink] = useState('home')
+    const [scrolled, setScrolled] = useState(false)
+    const [collapsed, setCollapsed] = useState(false)
+
+    const menuItemIds = ['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact']
+    useEffect(() => {
+
+    }, [])
+    useEffect(() => {
+        // Highlightening the menu items according to current scrolling position...
+        const sectionOffsets = []
+        for (const menuItemId of menuItemIds) {
+            const ele = document.getElementById(menuItemId)
+            sectionOffsets.push(ele)
+        }
+
+        const onScroll = () => {
+            // When scroll start over 50px, handle nav properties...
+            let isScrolled = window.scrollY > 50 ? true : false
+            setScrolled(isScrolled)
+
+            // Highlightening the menu items according to current scrolling position...
+            for (let i = sectionOffsets.length - 1; i >= 0; i--) {
+                if (sectionOffsets[i]?.offsetTop && window.scrollY >= sectionOffsets[i].offsetTop - 100) {
+                    setActiveLink(menuItemIds[i]);
+                    break;
+                }
+            }
+        }
+
+        window.addEventListener('scroll', onScroll)
+        return () => {
+            window.removeEventListener('scroll', onScroll)
+        }
+    }, [])
+
+    return (
+
+        <Navbar expand="lg" className={(scrolled ? 'scrolled' : '')} >
+            <Container>
+                <Navbar.Brand href="#home">
+                    {/* <img src={logo} alt='logo' width={'100px'} /> */}
+                    <div className='logo'>
+                        <img src={logo} alt='logo' width={'100px'} />
+                        <img src={title} alt='title' width={'100px'} />
+                    </div>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => {
+
+                    const attToggler = document.querySelector('nav.navbar .navbar-toggler')
+                    const att = document.querySelector('.navbar')
+                    console.log(att)
+
+                    // att.classList.add('mk-collapsed')
+                    const attClass = attToggler.getAttribute('class')
+
+                    if (!attClass.includes('collapsed')) {
+                        att.removeAttribute('id', 'mk-collapsed')
+
+                    }
+                    else {
+                        att.setAttribute('id', 'mk-collapsed')
+                    }
+                    setCollapsed(!attClass.includes('collapsed'))
+                    console.log('att', att, attToggler.getAttribute('class').includes('collapsed'))
+
+                }} >
+                    <span className='navbar-toggler-icon' ></span>
+                </Navbar.Toggle>
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home" className={activeLink === 'home' ? 'activated' : ''} >Home</Nav.Link>
+                        <Nav.Link href="#about" className={activeLink === 'about' ? 'activated' : ''} >About</Nav.Link>
+                        <Nav.Link href="#skills" className={activeLink === 'skills' ? 'activated' : ''} >Skills</Nav.Link>
+                        <Nav.Link href="#experience" className={activeLink === 'experience' ? 'activated' : ''} >Experiences</Nav.Link>
+                        <Nav.Link href="#education" className={activeLink === 'education' ? 'activated' : ''} >Educations</Nav.Link>
+                        <Nav.Link href="#projects" className={activeLink === 'projects' ? 'activated' : ''} >Projects</Nav.Link>
+                        <Nav.Link href="#contact" className={activeLink === 'contact' ? 'activated' : ''} >Contact</Nav.Link>
+                    </Nav>
+                    <span className='navbar-text'>
+                        <div className='social-icon'>
+                            <a href='#'><img src={github} alt='github' /></a>
+                            <a href='#'><img src={linkedin} alt='linkedin' /></a>
+                            <a href='#'><img src={leetCode} alt='leetcode' /></a>
+                        </div>
+                        {/* <button className='vvd' onClick={() => console.log('connect Navbar')} >
+                            Let's Connect
+                        </button> */}
+
+                    </span>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    )
+}

@@ -1,6 +1,7 @@
 import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+// import { Container, Nav, Navbar } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
+import { useMediaQuery } from '@react-hook/media-query'
 // import logo from '../assets/img/logo.svg'
 import logo from '../assets/img/MikeKim-white.svg'
 import title from '../assets/img/Front End Developer.svg'
@@ -9,101 +10,115 @@ import leetCode from '../assets/img/code-solid.svg'
 import github from '../assets/img/github.svg'
 import './NavBar.css'
 const NavBar = () => {
-    // const [activeItem, setActiveItem] = useState('');// Scroll highlighting on menu items
+    //const menuItemIds = ['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact']
+    const navLists = [
+        {
+            id: 1,
+            icon: 'estate',
+            title: 'Home',
+            href: 'home',
+        },
+        {
+            id: 2,
+            icon: 'user',
+            title: 'About',
+            href: 'about',
+        },
+        {
+            id: 3,
+            icon: 'cog',
+            title: 'Skills',
+            href: 'skills',
+        },
+        {
+            id: 4,
+            icon: 'briefcase-alt',
+            title: 'Experience',
+            href: 'experience',
+        },
+        {
+            id: 5,
+            icon: 'university',
+            title: 'Education',
+            href: 'education',
+        },
+        {
+            id: 6,
+            icon: 'apps',
+            title: 'Projects',
+            href: 'projects',
+        },
 
-    const [activeLink, setActiveLink] = useState('home')
-    const [scrolled, setScrolled] = useState(false)
-    const [collapsed, setCollapsed] = useState(false)
-
-    const menuItemIds = ['home', 'about', 'skills', 'experience', 'education', 'projects', 'contact']
+        {
+            id: 7,
+            icon: 'message',
+            title: 'Contact',
+            href: 'contact',
+        },
+    ]
+    const [activeLink, setActiveLink] = useState(1)
+    const [toggleShowMenu, setToggleShowMenu] = useState(false);
+    const [scrolledTop, setScrolledTop] = useState(false)
+    const [scrollDown, setScrollDown] = useState(false)
+    const matches = useMediaQuery('(max-width: 768px)');
+    let prevScrollY = 0
     useEffect(() => {
+        const menuLists = []
+        navLists.forEach((list) => menuLists.push(document.getElementById(list.href)))
+        console.log(menuLists)
 
-    }, [])
-    useEffect(() => {
-        // Highlightening the menu items according to current scrolling position...
-        const sectionOffsets = []
-        for (const menuItemId of menuItemIds) {
-            const ele = document.getElementById(menuItemId)
-            sectionOffsets.push(ele)
-        }
+        const headNav = document.querySelector('.header-nav')
+        const scrollEvent = () => {
+            const scrollY = window.scrollY;
+            if ((scrollY - prevScrollY) > 0) setScrollDown(true)
+            else if ((scrollY - prevScrollY) < 0) setScrollDown(false)
 
-        const onScroll = () => {
-            // When scroll start over 50px, handle nav properties...
-            let isScrolled = window.scrollY > 50 ? true : false
-            setScrolled(isScrolled)
+            // console.log('scrollY', scrollY, 'dir', scrollY - prevScrollY)
+            prevScrollY = scrollY
+            let scrolled = (scrollY > 50) ? true : false
+            setScrolledTop(scrolled)
 
-            // Highlightening the menu items according to current scrolling position...
-            for (let i = sectionOffsets.length - 1; i >= 0; i--) {
-                if (sectionOffsets[i]?.offsetTop && window.scrollY >= sectionOffsets[i].offsetTop - 100) {
-                    setActiveLink(menuItemIds[i]);
+            // ----------- Make the current section active in menu... ----------
+            for (let i = menuLists.length - 1; i >= 0; i--) {
+                if (scrollY >= (menuLists[i].offsetTop - 100)) {
+                    setActiveLink(navLists[i].id)
                     break;
                 }
             }
-        }
 
-        window.addEventListener('scroll', onScroll)
-        return () => {
-            window.removeEventListener('scroll', onScroll)
         }
+        window.addEventListener('scroll', scrollEvent)
+        return () => window.removeEventListener('scroll', scrollEvent)
     }, [])
-
     return (
+        <header className={`header-nav ${scrolledTop && !matches ? 'scrolled' : ''} ${matches ? (scrollDown ? '' : 'hidden') : ''}`}>
+            <nav className={`mk-navbar container`}>
+                <a href="index.html" className="mk-navbar-logo">
+                    <img src={logo} alt='logo' width={'100px'} />
+                    <img src={title} alt='title' width={'100px'} />
+                </a>
+                <div className={`mk-navbar-menu ${toggleShowMenu ? 'show-menu' : ''}`}>
+                    <ul className="mk-navbar-list grid">
+                        {
+                            navLists.map((list) => (
+                                <li key={list.id} className="mk-navbar-item">
+                                    <a href={`#${list.href}`} className={`mk-navbar-link ${activeLink === list.id ? 'active-link' : ''}`} onClick={() => setActiveLink(list.id)}>
+                                        <i className={`uil uil-${list.icon} mk-navbar-icon`}></i>
+                                        <span className='mk-navbar-name'>{list.title}</span>
+                                    </a>
+                                </li>
+                            ))
+                        }
 
-        <Navbar expand="lg" className={(scrolled ? 'scrolled' : '')} >
-            <Container>
-                <Navbar.Brand href="#home">
-                    {/* <img src={logo} alt='logo' width={'100px'} /> */}
-                    <div className='logo'>
-                        <img src={logo} alt='logo' width={'100px'} />
-                        <img src={title} alt='title' width={'100px'} />
-                    </div>
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => {
-
-                    const attToggler = document.querySelector('nav.navbar .navbar-toggler')
-                    const att = document.querySelector('.navbar')
-                    console.log(att)
-
-                    // att.classList.add('mk-collapsed')
-                    const attClass = attToggler.getAttribute('class')
-
-                    if (!attClass.includes('collapsed')) {
-                        att.removeAttribute('id', 'mk-collapsed')
-
-                    }
-                    else {
-                        att.setAttribute('id', 'mk-collapsed')
-                    }
-                    setCollapsed(!attClass.includes('collapsed'))
-                    console.log('att', att, attToggler.getAttribute('class').includes('collapsed'))
-
-                }} >
-                    <span className='navbar-toggler-icon' ></span>
-                </Navbar.Toggle>
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home" className={activeLink === 'home' ? 'activated' : ''} >Home</Nav.Link>
-                        <Nav.Link href="#about" className={activeLink === 'about' ? 'activated' : ''} >About</Nav.Link>
-                        <Nav.Link href="#skills" className={activeLink === 'skills' ? 'activated' : ''} >Skills</Nav.Link>
-                        <Nav.Link href="#experience" className={activeLink === 'experience' ? 'activated' : ''} >Experiences</Nav.Link>
-                        <Nav.Link href="#education" className={activeLink === 'education' ? 'activated' : ''} >Educations</Nav.Link>
-                        <Nav.Link href="#projects" className={activeLink === 'projects' ? 'activated' : ''} >Projects</Nav.Link>
-                        <Nav.Link href="#contact" className={activeLink === 'contact' ? 'activated' : ''} >Contact</Nav.Link>
-                    </Nav>
-                    <span className='navbar-text'>
-                        <div className='social-icon'>
-                            <a href='#'><img src={github} alt='github' /></a>
-                            <a href='#'><img src={linkedin} alt='linkedin' /></a>
-                            <a href='#'><img src={leetCode} alt='leetcode' /></a>
-                        </div>
-                        {/* <button className='vvd' onClick={() => console.log('connect Navbar')} >
-                            Let's Connect
-                        </button> */}
-
-                    </span>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+                    </ul>
+                    {/* <i className="uil uil-times nav-close" onClick={() => setToggleShowMenu(prev => !prev)}></i> */}
+                </div>
+                <div></div>
+                {/* <div className={`mk-navbar-toggle`} onClick={() => setToggleShowMenu(prev => !prev)}>
+                    <i className="uil uil-apps"></i>
+                </div> */}
+            </nav>
+        </header>
     )
 }
 

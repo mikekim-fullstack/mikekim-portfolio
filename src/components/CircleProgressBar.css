@@ -4,14 +4,14 @@
     inherits: false;
 }
 
-.circle-prograss-bar {
+.circle-progress-bar {
     display: inline-block;
     margin: 10px;
 }
 
 
 
-.circle-prograss-bar .meter {
+.circle-progress-bar .meter {
     --fg: #32413e 50%;
     --bg: rgba(11, 206, 175, 0.5);
     --color: rgb(11, 206, 175);
@@ -42,16 +42,16 @@
 }
 
 
-.circle-prograss-bar .meter::after {
+.circle-progress-bar .meter::after {
     content: counter(num) '%';
 }
 
-.circle-prograss-bar .meter.animation {
+.circle-progress-bar .meter.animation {
     animation: animation-circular-prograsive-bar 2s 1 forwards;
     counter-reset: num var(--num);
 }
 
-.circle-prograss-bar .title {
+.circle-progress-bar .title {
     font-family: 'Poppins', sans-serif;
     color: #e3e3e3;
     font-size: 1.2rem;

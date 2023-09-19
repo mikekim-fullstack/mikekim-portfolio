@@ -12,6 +12,22 @@
     margin-top: -60px !important;
 }
 
+.skill-developer {
+    display: inline-block;
+    /* border: 1px solid white; */
+}
+
+.skill-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(160, 160, 160, transparent);
+    border-radius: 1rem;
+    padding: 1.5rem 1rem 0rem;
+
+    background-color: rgba(50, 50, 50, 0.1);
+    flex-wrap: wrap;
+}
 
 .skill-bx h2 {
     font-size: 45px;
