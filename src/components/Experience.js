@@ -1,8 +1,16 @@
-import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import React, { useState } from 'react'
+// import { Container, Row, Col } from 'react-bootstrap'
 import './Experience.css'
-import Carousel from 'react-multi-carousel';
+// import Carousel from 'react-multi-carousel';
 import TimeLineCard from './TimeLineCard'
+// Import Swiper React components
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 const Experience = () => {
     const experienceData = [
         {
@@ -75,7 +83,7 @@ const Experience = () => {
             role: 'Project Manager C++',
             company: 'WowWee',
             site: 'https://wowwee.com/',
-            period: '2006 - 2008',
+            period: '2006 - 2007',
             description: 'WowWee Company was the world leading robotic toy company in Hong Kong',
             responsibility: [
                 'Co-leading the couple of projects such as RSMedia and Elvis Presley Robot',
@@ -97,45 +105,70 @@ const Experience = () => {
             ]
         }
     ]
-    const responsive = {
-        superLargeDesktop: {
-            // the naming can be any, depends on you.
-            breakpoint: { max: 4000, min: 3000 },
-            items: 5
-        },
-        desktop: {
-            breakpoint: { max: 3000, min: 1024 },
-            items: 3
-        },
-        tablet: {
-            breakpoint: { max: 1024, min: 464 },
-            items: 2
-        },
-        mobile: {
-            breakpoint: { max: 464, min: 0 },
-            items: 1
-        }
-    };
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const updateIndex = (swiperInstance) => {
+        if (swiperInstance === null) return;
+        const currentSlide = swiperInstance?.activeIndex;
+        console.log('swiper', currentSlide)
+        setCurrentIndex(currentSlide)
+    }
     return (
         <section id='experience' className='experience'>
-            <Container>
+            <h2 className='h2-title'>Experience</h2>
+            <Swiper className='experience-swiper'
+                initialSlide={currentIndex}
+                onActiveIndexChange={updateIndex}
+                grabCursor
+                spaceBetween={32}
+                slidesPerView={1}
+                // loop={true}
+                pagination={{
+                    clickable: true,
+                    // type: 'progressbar',
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
 
-                <h2>Experience</h2>
-                <div className='parent-row'>
-                    <div className='one-row'>
+                breakpoints={{
+                    576: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1100: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                }}
+            >
+                {
+                    experienceData.map((data, cardIndex) => {
+                        return (
+                            <SwiperSlide key={cardIndex} className={`experience-card ${cardIndex % 2 ? 'active' : ''}`}>
+                                {/* {console.log('cardIndex', currentIndex, cardIndex)} */}
+                                <h5 className='period'>{data.period}</h5>
+                                <h4 className='role'>{data.role}</h4>
+                                <a href={data.site} target='_blank' className='company'>{data.company}</a>
+                                <p className='description'>{data.description}</p>
+                                {data.responsibility && <>
+                                    <h5 className='responsibility'>Responsibilities</h5>
+                                    <ul className='lists'>
+                                        {
+                                            data.responsibility.map((res, index) => <li key={index}>{res}</li>)
+                                        }
+                                    </ul></>
+                                }
+                            </SwiperSlide>
+                        )
+                    })
+                }
 
-                        {
-                            experienceData.map((data) => {
-                                // console.log(data)
-                                return (
-                                    <TimeLineCard key={data.id} {...data} />
-                                )
-                            })
-                        }
+            </Swiper>
 
-                    </div>
-                </div>
-            </Container>
+
         </section>
     )
 }

@@ -57,7 +57,7 @@ const Contact = () => {
                         <img src={contactImg} alt='contact image' />
                     </Col>
                     <Col md={6}>
-                        <h2>Get In Touch</h2>
+                        <h2 className='h2-title'>Get In Touch</h2>
                         <form onSubmit={(e) => onFormSubmit(e)}>
                             <Row>
                                 <Col sm={4} className='px-1'>

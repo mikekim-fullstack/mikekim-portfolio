@@ -18,7 +18,7 @@ const About = () => {
             <Container>
                 <Row>
                     <Col className='col'>
-                        <h2>About me</h2>
+                        <h2 className='h2-title'>About me</h2>
                         <ReadMore content={content} />
                     </Col>
                 </Row>

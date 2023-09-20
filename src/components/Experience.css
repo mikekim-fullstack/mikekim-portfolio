@@ -1,10 +1,158 @@
 .experience {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     /* align-self: flex-start; */
+    --card-bg-color: rgba(123, 174, 166, 0.4);
+    --card-bg-title-color: rgba(51, 101, 93, 0.4);
+    --card-company-color: rgb(0, 215, 208);
+    --card-company-hover-color: rgb(0, 238, 230);
+    --card-description-color: rgb(194, 201, 200);
+    --card-period-color: #b8b8b8;
+    --card-list-color: #b8b8b8;
+    --card-responsibility-color: #ffffff;
+    --card-min-width: 500px;
+    padding-top: var(--section-padding-full);
+    /* padding-bottom: 60px; */
 
 }
 
+.experience-swiper {
+    margin-top: 1.5rem;
+    height: auto;
+    margin-bottom: var(--mb-3);
+}
 
+.swiper-slide {
+    height: auto !important;
+
+}
+
+.experience-card {
+    position: relative;
+    background-color: rgba(50, 50, 50, 0.3);
+    /* background-color: var(--container-color); */
+    border-top: 2rem solid rgba(100, 100, 100, 1);
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+
+}
+
+.experience-card.active {
+    background-color: rgba(50, 50, 50, 0.6);
+}
+
+/* ------- Card Properties */
+.experience-card .period {
+    position: absolute;
+    top: -1.4rem;
+    left: 1rem;
+    font-size: var(--small-font-size);
+    font-style: italic;
+}
+
+.experience-card .role {
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.experience-card .company {
+    color: var(--card-company-color);
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.experience-card .company:hover {
+    color: var(--card-company-hover-color);
+}
+
+
+.experience-card .description {
+    color: var(--card-description-color);
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.experience-card .responsibility {
+    color: var(--card-responsibility-color);
+
+}
+
+.experience-card .lists {
+    color: var(--card-list-color);
+    list-style-type: disc;
+    text-align: left;
+}
+
+.experience-card .lists li {
+    margin-bottom: 10px;
+}
+
+/* ========= Swiper properties========== */
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    /* background: var(--swiper-pagination-color, var(--swiper-theme-color)); */
+    background: rgb(200, 200, 200) !important;
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--swiper-nav-color) !important;
+}
+
+.swiper-button-prev {
+    background-color: var(--swiper-nav-color-dark);
+    -webkit-mask-image: url('../assets/img/arrow1.svg');
+    mask-image: url('../assets/img/arrow1.svg');
+    mask-size: cover;
+    transform: scale(var(--swiper-nav-scale-normal));
+    -webkit-transform: scale(var(--swiper-nav-scale-normal));
+    transition: 0.3s;
+}
+
+.swiper-button-prev:hover {
+    background-color: var(--swiper-nav-color);
+    transform: scale(var(--swiper-nav-scale-large));
+    -webkit-transform: scale(var(--swiper-nav-scale-large));
+}
+
+.swiper-button-prev:after {
+    content: '' !important;
+}
+
+.swiper-button-next {
+    background-color: var(--swiper-nav-color-dark);
+    -webkit-mask-image: url('../assets/img/arrow2.svg');
+    mask-image: url('../assets/img/arrow2.svg');
+    mask-size: cover;
+    transform: scale(var(--swiper-nav-scale-normal));
+    -webkit-transform: scale(var(--swiper-nav-scale-normal));
+    transition: 0.3s;
+}
+
+.swiper-button-next:hover {
+    background-color: var(--swiper-nav-color);
+    transform: scale(var(--swiper-nav-scale-large));
+    -webkit-transform: scale(var(--swiper-nav-scale-large));
+}
+
+.swiper-button-next:after {
+    content: '' !important;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 100%;
+    padding: 2rem;
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(70, 70, 70, 0.8);
+    border-radius: 50%; */
+
+
+
+    /* height: 50%; */
+}
 
 .experience .one-row {
     display: flex;
@@ -44,10 +192,16 @@
 }
 */
 @media (max-width:768px) {
-    .experience .one-row {
-        display: block;
-        overflow-x: none;
-        /* max-width: 700px; */
+    .experience-card {
+        padding: 1rem 5rem;
+
+
+    }
+}
+
+@media (max-width:576px) {
+    .experience-card {
+        padding: 1rem 2rem;
 
 
     }

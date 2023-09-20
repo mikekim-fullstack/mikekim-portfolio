@@ -1,4 +1,123 @@
 .education {
     width: 100%;
-    align-self: flex-start;
+
+    padding-top: var(--section-padding-full);
+    margin: 0 auto;
+    /* align-self: flex-start; */
+    --card-bg-color: rgba(123, 174, 166, 0.4);
+    --card-bg-title-color: rgba(51, 101, 93, 0.4);
+    --card-company-color: rgb(0, 215, 208);
+    --card-company-hover-color: rgb(0, 238, 230);
+    --card-description-color: rgb(194, 201, 200);
+    --card-period-color: #b8b8b8;
+    --card-list-color: #b8b8b8;
+    --card-responsibility-color: #ffffff;
+    --card-min-width: 500px;
+    /* padding-top: var(--section-padding-full); */
+    padding-top: 60px;
+
+}
+
+.education-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    gap: 2rem;
+    padding-bottom: 1rem;
+    ;
+}
+
+.education-card {
+    position: relative;
+    background-color: rgba(60, 50, 50, 0.2);
+    /* background-color: var(--container-color); */
+    border-top: 2rem solid rgba(60, 50, 50, 0.5);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+
+}
+
+.education-card.active {
+    background-color: rgba(50, 50, 50, 0.6);
+}
+
+/* ------- Card Properties */
+.education-card .period {
+    position: absolute;
+    top: -1.4rem;
+    left: 1rem;
+    font-size: var(--small-font-size);
+    font-style: italic;
+}
+
+.education-card .role {
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.education-card .company {
+    color: var(--card-company-color);
+    display: block;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.education-card .company:hover {
+    color: var(--card-company-hover-color);
+}
+
+
+.education-card .description {
+    color: var(--card-description-color);
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.education-card .responsibility {
+    color: var(--card-responsibility-color);
+
+}
+
+
+@media (max-width:980px) {
+
+    .education-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .education-card {
+        padding: 1rem 5rem;
+
+
+    }
+}
+
+@media (max-width:768px) {
+
+    .education-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .education-card {
+        padding: 1rem 5rem;
+
+
+    }
+}
+
+@media (max-width:576px) {
+    .education {
+        padding-top: 0;
+    }
+
+    .education-card {
+        padding: 1rem 2rem;
+
+
+    }
 }

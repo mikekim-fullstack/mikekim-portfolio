@@ -5,8 +5,10 @@
 }
 
 .circle-progress-bar {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     margin: 10px;
+    align-items: center;
 }
 
 
@@ -16,6 +18,7 @@
     --bg: rgba(11, 206, 175, 0.5);
     --color: rgb(11, 206, 175);
     --size: 150px;
+    --size-small: 140px;
     font-family: 'Cormorant Garamond', serif;
 
     /* font: 800 40px system-ui; */
@@ -68,5 +71,34 @@
 
     to {
         --num: var(--value);
+    }
+}
+
+@media (max-width:396px) {
+
+    .circle-progress-bar .meter {
+        --fg: #32413e 50%;
+        --bg: rgba(11, 206, 175, 0.5);
+        --color: rgb(11, 206, 175);
+        --size: 150px;
+        --size-small: 100px;
+        font-family: 'Cormorant Garamond', serif;
+
+        /* font: 800 40px system-ui; */
+        /* padding: 2rem; */
+
+        width: var(--size-small);
+        height: var(--size-small);
+        /* font-size: calc(var(--size-small)/6); */
+        font-size: 1rem;
+    }
+
+    .circle-progress-bar .title {
+        font-size: 0.9rem;
+        gap: 1rem;
+    }
+
+    .circle-progress-bar {
+        /* text-align: center; */
     }
 }

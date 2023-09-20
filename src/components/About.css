@@ -1,3 +1,8 @@
+.about {
+    padding-top: var(--section-padding-full);
+    margin-bottom: 1rem;
+}
+
 .about .col p {
     color: #B8B8B8;
     font-size: 1.2rem;
@@ -41,9 +46,11 @@
     }
 }
 
-/* @media (max-width:280px) {
+@media (max-width:375px) {
     .about .col p {
-        text-align: center;
+        font-size: 0.9rem;
+        letter-spacing: 0.8px;
+        line-height: 1.5em;
     }
 
-} */
+}

@@ -1,5 +1,6 @@
 .skills {
-    padding: 0 0 50px 0;
+    padding-top: var(--section-padding-full);
+    margin-bottom: 30px;
     position: relative;
     /* border: 2px dotted hotpink; */
 }
@@ -8,8 +9,8 @@
     background: #131515;
     border-radius: 64px;
     text-align: center;
-    padding: 60px 50px;
-    margin-top: -60px !important;
+    padding: 20px 50px;
+    /* margin-top: -60px !important; */
 }
 
 .skill-developer {
@@ -29,11 +30,11 @@
     flex-wrap: wrap;
 }
 
-.skill-bx h2 {
+/* .skill-bx h2 {
     font-size: 45px;
     font-weight: 700;
 
-}
+} */
 
 .skill-bx p {
     color: #e3e3e3;
@@ -68,3 +69,13 @@
 }
 
 /* ----------------- */
+@media (max-width:390px) {
+    .skill-bx {
+        /* background: #131515;
+        border-radius: 64px;
+        text-align: center;
+        padding: 60px 50px; */
+        margin-top: -90px !important;
+    }
+
+}

@@ -49,13 +49,23 @@ const Education = () => {
             <Container>
                 <Row>
                     <Col>
-                        <h2>Education</h2>
-                        {
-                            experienceData.map((data) => {
-                                console.log(data)
-                                return <TimeLineCard key={data.id} {...data} style={colorTheme} />
-                            })
-                        }
+                        <h2 className='h2-title'>Education</h2>
+
+                        <div className='education-container'>
+                            {
+                                experienceData.map((data) => (
+                                    <div className='education-card'>
+                                        <h5 className='period'>{data.period}</h5>
+                                        <h4 className='role'>{data.role}</h4>
+                                        <a href={data.site} target='_blank' className='company'>{data.company}</a>
+                                        <p className='description'>{data.description}</p>
+                                    </div>
+                                )
+                                    // console.log(data)
+                                    // return <TimeLineCard key={data.id} {...data} style={colorTheme} />
+                                )
+                            }
+                        </div>
 
                     </Col>
                 </Row>

@@ -68,6 +68,16 @@
   --z-fixed: 100;
   --z-modal: 1000;
 
+  /* ======= SPACE ====== */
+  --section-padding-full: 60px;
+  --section-padding-small: 0px;
+
+  /* ===== SWIPER ======= */
+  --swiper-nav-color: rgba(90, 119, 121, 0.6);
+  --swiper-nav-color-dark: rgba(90, 119, 121, 0.3);
+  --swiper-nav-scale-normal: 0.8;
+  --swiper-nav-scale-large: 1;
+
 
 }
 
@@ -124,6 +134,10 @@ a:hover {
 }
 
 @media (max-width:768px) {
+  :root {
+    --section-padding-full: 10px;
+  }
+
   .experience_education {
     display: block;
   }
@@ -170,6 +184,12 @@ h2,
 h3 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
+}
+
+.h2-title {
+  font-family: 'Centra', sans-serif;
+  font-weight: 700;
+  font-size: calc(1.325rem + .9vw);
 }
 
 ul {

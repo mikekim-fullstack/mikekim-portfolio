@@ -65,13 +65,13 @@ const NavBar = () => {
     useEffect(() => {
         const menuLists = []
         navLists.forEach((list) => menuLists.push(document.getElementById(list.href)))
-        console.log(menuLists)
+        // console.log(menuLists)
 
         const headNav = document.querySelector('.header-nav')
         const scrollEvent = () => {
             const scrollY = window.scrollY;
-            if ((scrollY - prevScrollY) > 0) setScrollDown(true)
-            else if ((scrollY - prevScrollY) < 0) setScrollDown(false)
+            // if ((scrollY - prevScrollY) > 0) setScrollDown(true)
+            // else if ((scrollY - prevScrollY) < 0) setScrollDown(false)
 
             // console.log('scrollY', scrollY, 'dir', scrollY - prevScrollY)
             prevScrollY = scrollY
@@ -91,7 +91,8 @@ const NavBar = () => {
         return () => window.removeEventListener('scroll', scrollEvent)
     }, [])
     return (
-        <header className={`header-nav ${scrolledTop && !matches ? 'scrolled' : ''} ${matches ? (scrollDown ? '' : 'hidden') : ''}`}>
+        // <header className={`header-nav ${scrolledTop && !matches ? 'scrolled' : ''} ${matches ? (scrollDown ? '' : 'hidden') : ''}`}>
+        <header className={`header-nav ${scrolledTop && !matches ? 'scrolled' : ''}`}>
             <nav className={`mk-navbar container`}>
                 <a href="index.html" className="mk-navbar-logo">
                     <img src={logo} alt='logo' width={'100px'} />

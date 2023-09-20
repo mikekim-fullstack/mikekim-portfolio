@@ -29,7 +29,7 @@ const Skills = () => {
             <Container>
                 <Row >
                     <Col className='skill-bx'>
-                        <h2>Skills</h2>
+                        <h2 className='h2-title'>Skills</h2>
                         {/* <p>Computer Programming Languages</p> */}
 
                         <div className='progress-bar animation' ref={progressBarRef}>
@@ -46,7 +46,6 @@ const Skills = () => {
                                 <p>Backend Developer</p>
                                 <div className="skill-content">
                                     <CircleProgressBar start={progressBarVisible} title={'NodeJS'} value={80} size={'150'} color={'rgba(11, 206, 175,1)'} />
-                                    {/* <CircleProgressBar start={progressBarVisible} title={'C++'} value={90} size={'150'} color={'rgba(11, 206, 175,1)'} /> */}
                                     <CircleProgressBar start={progressBarVisible} title={'Python'} value={85} size={'150'} color={'rgba(11, 206, 175,1)'} />
                                     <CircleProgressBar start={progressBarVisible} title={'Django'} value={85} size={'150'} color={'rgba(11, 206, 175,1)'} />
                                     <CircleProgressBar start={progressBarVisible} title={'SQL'} value={80} size={'150'} color={'rgba(11, 206, 175,1)'} />

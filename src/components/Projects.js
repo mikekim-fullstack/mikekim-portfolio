@@ -51,7 +51,7 @@ const Projects = () => {
             <Container>
                 <Row>
                     <Col>
-                        <h2>Projects</h2>
+                        <h2 className='h2-title'>Projects</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br></br>Atque distinctio ducimus corporis eum, exercitationem, obcaecati quae commodi perspiciatis ipsum voluptate hic. Et quia iste incidunt veniam cumque distinctio nostrum quidem?</p>
 
                         <Tab.Container id='projects-tabs' defaultActiveKey='first'>

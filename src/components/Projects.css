@@ -1,18 +1,18 @@
 /************ Projects Css ************/
 
 .projects {
-    padding: 120px 0;
+    padding: var(--section-padding-full) 0;
     /* z-index: -1; */
     position: relative;
     background-color: black;
 }
 
 
-.projects h2 {
+/* .projects h2 {
     font-size: 45px;
     font-weight: 700;
     text-align: center;
-}
+} */
 
 .projects p {
     color: #B8B8B8;
@@ -95,4 +95,15 @@
     width: 35%;
     right: 0;
     z-index: -4;
+}
+
+@media (max-width:390px) {
+    .projects {
+        /* background: #131515;
+        border-radius: 64px;
+        text-align: center;
+        padding: 60px 50px; */
+        /* margin-top: -150px !important; */
+    }
+
 }

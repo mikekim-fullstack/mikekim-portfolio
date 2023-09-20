@@ -13,7 +13,8 @@ const TimeLineCard = ({ role, company, site, period, description, responsibility
                     {
                         responsibility.map((res, index) => <li key={index}>{res}</li>)
                     }
-                </ul></>}
+                </ul></>
+            }
 
 
         </div>
