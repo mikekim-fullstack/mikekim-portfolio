@@ -1,17 +1,27 @@
-import { Col } from 'react-bootstrap'
-import './ProjectCards.css'
-const ProjectCards = ({ title, description, imgUrl }) => {
+import './ProjectCards.scss'
+
+const ProjectCards = ({ title, description, imgUrl, link, type }) => {
+
+    const onClickCard = (link) => {
+        console.log('clicked')
+        if (link) window.open(link, "_blank", "noreferrer");
+    }
 
     return (
-        <Col size={12} sm={6} md={4}>
-            <div className='proj-imgbx'>
+
+        <div className='proj-card'  >
+            <div className={`proj-img ${type ? 'type-long' : ''}`} style={{ flex: `${type ? '6' : '5'}` }}>
                 <img src={imgUrl} alt='imgUrl' />
-                <div className='proj-txbx'>
-                    <h4>{title}</h4>
-                    <span>{description}</span>
-                </div>
             </div>
-        </Col>
+            <div className={`proj-txbx ${type ? 'type-long' : ''}`} style={{ flex: `${type ? '4' : '2'}` }}>
+                <h4>{title}</h4>
+                <ul className='desc'>{
+                    description?.map((desc) => <li>{desc}</li>)
+                }</ul>
+                {link && <a className='link' href={link} type='_blank'>Go to the site</a>}
+            </div>
+        </div>
+
     )
 }
 export default ProjectCards

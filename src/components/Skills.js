@@ -36,8 +36,8 @@ const Skills = () => {
                             <div className='skill-developer'>
                                 <p>Frontend Developer</p>
                                 <div className='skill-content'>
-                                    <CircleProgressBar start={progressBarVisible} title={'HTML'} value={85} size={'150'} color={'rgba(255,105,180,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'CSS'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
+                                    <CircleProgressBar start={progressBarVisible} title={'HTML'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
+                                    <CircleProgressBar start={progressBarVisible} title={'CSS/SASS'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
                                     <CircleProgressBar start={progressBarVisible} title={'JavaScript'} value={88} size={'150'} color={'rgba(255,105,180,1)'} />
                                     <CircleProgressBar start={progressBarVisible} title={'React JS'} value={87} size={'150'} color={'rgba(255,105,180,1)'} />
                                 </div>
@@ -45,21 +45,21 @@ const Skills = () => {
                             <div className='skill-developer'>
                                 <p>Backend Developer</p>
                                 <div className="skill-content">
-                                    <CircleProgressBar start={progressBarVisible} title={'NodeJS'} value={80} size={'150'} color={'rgba(11, 206, 175,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'Python'} value={85} size={'150'} color={'rgba(11, 206, 175,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'Django'} value={85} size={'150'} color={'rgba(11, 206, 175,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'SQL'} value={80} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                                    <CircleProgressBar start={progressBarVisible} title={'Strapi'} value={86} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                                    <CircleProgressBar start={progressBarVisible} title={'Node.js'} value={85} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                                    <CircleProgressBar start={progressBarVisible} title={'Django RESTful'} value={87} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                                    <CircleProgressBar start={progressBarVisible} title={'SQL'} value={84} size={'150'} color={'rgba(11, 206, 175,1)'} />
 
                                 </div>
                             </div>
 
                             <div>
                                 <p>Source Code Control</p>
-                                <StickProgressBar start={progressBarVisible} title={'Git/hub'} value={85} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                                <StickProgressBar start={progressBarVisible} title={'Git/hub'} value={87} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
                                 <p>Development IDE</p>
                                 <StickProgressBar start={progressBarVisible} title={'VS Code'} value={90} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
-                                <StickProgressBar start={progressBarVisible} title={'VS C++'} value={87} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
-                                <StickProgressBar start={progressBarVisible} title={'QT C++'} value={88} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                                <StickProgressBar start={progressBarVisible} title={'VS C++'} value={88} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                                <StickProgressBar start={progressBarVisible} title={'QT C++'} value={91} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
                             </div>
                         </div>
 

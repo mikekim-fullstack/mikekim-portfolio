@@ -101,7 +101,8 @@
 }
 
 .swiper-button-prev {
-    background-color: var(--swiper-nav-color-dark);
+    /* background-color: var(--swiper-nav-color-dark); */
+    background-color: rgba(255, 255, 255, 0.5);
     -webkit-mask-image: url('../assets/img/arrow1.svg');
     mask-image: url('../assets/img/arrow1.svg');
     mask-size: cover;
@@ -121,7 +122,8 @@
 }
 
 .swiper-button-next {
-    background-color: var(--swiper-nav-color-dark);
+    /* background-color: var(--swiper-nav-color-dark); */
+    background-color: rgba(255, 255, 255, 0.5);
     -webkit-mask-image: url('../assets/img/arrow2.svg');
     mask-image: url('../assets/img/arrow2.svg');
     mask-size: cover;
