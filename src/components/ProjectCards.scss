@@ -34,7 +34,7 @@
 
             li {
                 list-style: disc inside;
-                margin-bottom: 1rem;
+                margin-bottom: 0.3rem;
 
             }
         }
@@ -63,7 +63,7 @@
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:1200px) {
     .proj-card {
         padding-left: 0rem;
         padding-right: 0rem;

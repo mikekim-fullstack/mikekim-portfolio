@@ -16,7 +16,8 @@ const Contact = () => {
     const onFormSubmit = async (e) => {
         e.preventDefault()
         try {
-            let response = await fetch('http://localhost:5000/contact',
+            let response = await fetch('https://email-server-production-b8a7.up.railway.app/contact',
+                // let response = await fetch('http://localhost:5000/contact',
                 {
                     method: 'POST',
                     headers: {

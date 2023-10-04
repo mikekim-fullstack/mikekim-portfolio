@@ -54,7 +54,7 @@ const Education = () => {
                         <div className='education-container'>
                             {
                                 experienceData.map((data) => (
-                                    <div className='education-card'>
+                                    <div className='education-card' key={data.id}>
                                         <h5 className='period'>{data.period}</h5>
                                         <h4 className='role'>{data.role}</h4>
                                         <a href={data.site} target='_blank' className='company'>{data.company}</a>
