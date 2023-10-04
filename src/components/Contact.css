@@ -3,6 +3,11 @@
     padding: var(--section-padding-full) 0 200px 0;
 }
 
+.contact .container-mk {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
 .contact img {
     width: 92%;
 }
@@ -21,7 +26,7 @@
     border-radius: 20px;
     color: #fff;
     margin: 0 0 8px 0;
-    padding: 18px 26px;
+    padding: 16px 26px;
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0.8px;
@@ -36,7 +41,7 @@
 
 .contact form input::placeholder,
 .contact form textarea::placeholder {
-    font-size: 16px;
+    font-size: 0.8rem;
     font-weight: 400;
     color: #fff;
 }
@@ -82,4 +87,18 @@
 
 .contact form button:hover::before {
     width: 100%;
+}
+
+@media screen and (max-width:1000px) {
+    .contact .container-mk {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media screen and (max-width:577px) {
+    .contact .container-mk {
+        /* padding-left: 3rem;
+        padding-right: 3rem; */
+    }
 }

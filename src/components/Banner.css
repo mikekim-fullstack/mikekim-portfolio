@@ -49,7 +49,7 @@ span.wrap {
     width: 96%;
 }
 
-.banner button {
+.banner a {
     color: #fff;
     font-weight: 700;
     font-size: 20px;
@@ -61,14 +61,14 @@ span.wrap {
 
 }
 
-.banner button svg {
+.banner a svg {
     font-size: 25px;
     margin-left: 10px;
     transition: 0.3s ease-in-out;
     line-height: 1;
 }
 
-.banner button:hover svg {
+.banner a:hover svg {
     margin-left: 25px;
 }
 
@@ -158,7 +158,7 @@ span.wrap {
         font-size: 3rem;
     }
 
-    .banner button {
+    .banner a {
         margin-top: 0;
         margin-bottom: 30px;
     }

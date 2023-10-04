@@ -52,7 +52,7 @@ const Contact = () => {
     }
     return (
         <section className='contact' id='contact'>
-            <Container>
+            <div className='container-mk'>
                 <Row className='align-items-center'>
                     <Col md={6}>
                         <img src={contactImg} alt='contact image' />
@@ -88,7 +88,7 @@ const Contact = () => {
                         </form>
                     </Col>
                 </Row>
-            </Container>
+            </div>
         </section>
     )
 }
