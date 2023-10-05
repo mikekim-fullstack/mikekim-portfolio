@@ -66,7 +66,8 @@ const Banner = () => {
                             <li className="wow fadeInUp" ><img src={phoneUrl} alt='phone' /><a href="callto:">+1 647 636 6379</a></li>
                             <li className="wow fadeInUp" ><img src={addressUrl} alt='address' /><address>Toronto, Ontario, Canada</address></li>
                         </ul>
-                        <a className='btn-download' href='https://mike-portfolio-c2fc9.web.app/mikekimCV2022-compressed.pdf' target="_blank" download='' onClick={() => console.log('connect Banner')}>Download My CV <ArrowRightCircle /></a>
+                        {/* <a className='btn-download' href='https://mike-portfolio-c2fc9.web.app/mikekimCV2023.pdf' target="_blank" download='' >Download My CV <ArrowRightCircle /></a> */}
+                        <a className='btn-download' href='./mikekimCV2023.pdf' target="_blank" download='' >Download My CV <ArrowRightCircle /></a>
 
                     </Col >
                     <Col sx={12} md={6} xl={5}>

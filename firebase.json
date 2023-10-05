@@ -1,6 +1,13 @@
 {
   "hosting": {
     "public": "build",
+    "firebase": "https://mike-portfolio-c2fc9.web.app",
+    "rewrites":[
+     {
+      "source":"**",
+      "destination":"/index.html"
+     }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
