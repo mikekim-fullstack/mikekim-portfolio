@@ -39,7 +39,7 @@ const Projects = () => {
         },
         {
             id: 2,
-            title: "Freelancer Work (6 months)",
+            title: "Freelancer Work ",
             description: [
                 'Client Side (ReactJS): Managed states using Redux and ReduxJS/Toolkit. Fetched data through Axios.',
                 'Server Side: Built endpoint API with Django (Python) RESTful framework. Implemented an authentication system for login. Used PostgreSQL for the database.',

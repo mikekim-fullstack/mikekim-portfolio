@@ -36,7 +36,7 @@ const Skills = () => {
                             <div className='skill-developer'>
                                 <p>Frontend Developer</p>
                                 <div className='skill-content'>
-                                    <CircleProgressBar start={progressBarVisible} title={'HTML'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
+                                    <CircleProgressBar start={progressBarVisible} title={'HTML5'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
                                     <CircleProgressBar start={progressBarVisible} title={'CSS/SASS'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
                                     <CircleProgressBar start={progressBarVisible} title={'JavaScript'} value={88} size={'150'} color={'rgba(255,105,180,1)'} />
                                     <CircleProgressBar start={progressBarVisible} title={'React JS'} value={87} size={'150'} color={'rgba(255,105,180,1)'} />

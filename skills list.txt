@@ -1,0 +1,80 @@
+www.linkedin.com/in/mike-kim-9a5b27271
+https://github.com/mikekim-fullstack
+https://mike-portfolio-c2fc9.web.app/
+https://lalasol-bootcamp.web.app/
+https://gymeagle-575e4.web.app/
+
+-----------------------------
+Front-End Development
+React.js
+Reduxjs/toolkit
+React Hooks
+Redux-Thunk
+Axios
+JavaScript
+JSX
+JSON
+HTML5
+SASS / CSS
+Bootstrap 
+tailwind
+
+
+Web Design
+Web Development
+Web Applications
+
+
+-----------------------------
+Coding Life
+Code Review
+Scrum
+Git / GitHub
+
+-----------------------------
+Back-End Web Development
+Strapi.js
+Node.js
+Django REST Framework
+PostreSQL
+Python (Programming Language)
+Redis
+Stripe payment 
+
+-----------------------------
+Package Management
+npx
+npm
+yarn
+Docker
+pip
+
+-----------------------------
+App Deployment
+Firebase
+Railway.app
+Amazon S3
+Amazon Web Services (AWS)
+
+
+-----------------------------
+Previous Career
+QT C++
+Microsoft Visual Studio C++
+
+
+-----------------------------
+Soft Skills
+Analytical Skills
+Communication
+Teamwork
+Problem-solving
+Time management
+Critical thinking
+Decision-making
+Organizational
+Stress management
+Adaptability
+Leadership
+Creativity
+Persuasion
