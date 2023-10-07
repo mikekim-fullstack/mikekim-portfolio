@@ -18,7 +18,7 @@ const StickProgressBar = ({ title, value, size, color, bgColor, start }) => {
         <div className='stick-progress-bar' style={{ maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto', paddingLeft: '10px', paddingRight: '10px' }}>
             <div className='title'>{title}</div>
             <div className={`meter ${start ? 'animation' : ''}`} style={{ '--size': `${size}`, '--color': color, '--bg': newBgColor }}>
-                <div style={{ '--value': value }}></div>
+                <div style={{ '--value': value, '--num': `${value}`, }}></div>
             </div>
 
         </div>

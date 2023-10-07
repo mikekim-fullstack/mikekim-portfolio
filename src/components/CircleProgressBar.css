@@ -4,6 +4,12 @@
     inherits: false;
 }
 
+/* :root {
+    --num1: 90;
+    --num: 20;
+} */
+
+
 .circle-progress-bar {
     display: flex;
     flex-direction: column;
@@ -35,10 +41,10 @@
     display: grid;
     place-items: center;
     background:
-        radial-gradient(closest-side, var(--fg) 90%, transparent 0 99.9%, var(--color) 0),
+        radial-gradient(farthest-side, var(--fg) 90%, transparent 0 99.9%, var(--color) 0),
         conic-gradient(var(--color) calc(var(--num) * 1%), var(--bg) 0);
     color: white;
-
+    /* counter-increment: var(--value); */
     /* animation: counter 5s infinite alternate ease-in-out; */
     /* animation: counter 3s 1 forwards;
     counter-reset: num var(--num); */
@@ -50,6 +56,9 @@
 }
 
 .circle-progress-bar .meter.animation {
+    -webkit-animation: animation-circular-prograsive-bar 2s 1 forwards;
+    -z-animation: animation-circular-prograsive-bar 2s 1 forwards;
+    -o-animation: animation-circular-prograsive-bar 2s 1 forwards;
     animation: animation-circular-prograsive-bar 2s 1 forwards;
     counter-reset: num var(--num);
 }

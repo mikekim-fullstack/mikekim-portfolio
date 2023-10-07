@@ -71,7 +71,9 @@ const Banner = () => {
 
                     </Col >
                     <Col sx={12} md={6} xl={5}>
-                        <img className='ani-img' src={mikekimUrl} alt='Header Img' />
+                        <div className='ani-img'>
+                            <img src={mikekimUrl} alt='Header Img' />
+                        </div>
                     </Col>
                 </Row>
             </Container>
