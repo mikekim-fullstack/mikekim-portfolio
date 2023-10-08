@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 # Server mailer
 .env
+*.txt
+skills list.txt
+temp.txt
