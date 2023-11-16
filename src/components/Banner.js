@@ -67,7 +67,7 @@ const Banner = () => {
                             <li className="wow fadeInUp" ><img src={addressUrl} alt='address' /><address>Toronto, Ontario, Canada</address></li>
                         </ul>
                         {/* <a className='btn-download' href='https://mike-portfolio-c2fc9.web.app/mikekimCV2023.pdf' target="_blank" download='' >Download My CV <ArrowRightCircle /></a> */}
-                        <a className='btn-download' href='./MikeKim-CV-2023-R1.pdf' target="_blank" download='' >Download My CV <ArrowRightCircle /></a>
+                        <a className='btn-download' href='./MikeKim-CV-2023-R2.pdf' target="_blank" download='' >Download My CV <ArrowRightCircle /></a>
 
                     </Col >
                     <Col sx={12} md={6} xl={5}>

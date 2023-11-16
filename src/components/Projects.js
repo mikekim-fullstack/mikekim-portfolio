@@ -95,7 +95,7 @@ const Projects = () => {
                 'Deployment: Client side - Firebase@Google'
             ],
             imgUrl: gymImg1,
-            link: 'https://gymeagle-575e4.web.app//'
+            link: null//'https://gymeagle-575e4.web.app//'
         },
         {
             id: 2,

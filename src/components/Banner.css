@@ -149,7 +149,7 @@ span.wrap {
     }
 
     50% {
-        transform: translateY(40px);
+        transform: translateY(10px);
     }
 
     100% {
