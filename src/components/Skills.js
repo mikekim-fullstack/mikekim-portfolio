@@ -11,6 +11,7 @@ import CircleProgressBar from './CircleProgressBar';
 import StickProgressBar from './StickProgressBar';
 
 import './Skills.css'
+import IntersectionVisibility from './IntersectionVisibility';
 const Skills = () => {
     let progressBarRef = useRef(null)
     const [progressBarVisible, setProgressBarVisible] = useState()
@@ -25,50 +26,52 @@ const Skills = () => {
 
 
     return (
-        <section id='skills' className='skills'>
-            <Container>
-                <Row >
-                    <Col className='skill-bx'>
-                        <h2 className='h2-title'>Skills</h2>
-                        {/* <p>Computer Programming Languages</p> */}
+        <IntersectionVisibility>
+            <section id='skills' className='skills'>
+                <Container>
+                    <Row >
+                        <Col className='skill-bx'>
+                            <h2 className='h2-title'>Skills</h2>
+                            {/* <p>Computer Programming Languages</p> */}
 
-                        <div className='progress-bar animation' ref={progressBarRef}>
-                            <div className='skill-developer'>
-                                <p>Frontend Developer</p>
-                                <div className='skill-content'>
-                                    <CircleProgressBar start={progressBarVisible} title={'HTML5'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'CSS/SASS'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'JavaScript'} value={88} size={'150'} color={'rgba(255,105,180,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'React JS'} value={87} size={'150'} color={'rgba(255,105,180,1)'} />
+                            <div className='progress-bar animation' ref={progressBarRef}>
+                                <div className='skill-developer'>
+                                    <p>Frontend Developer</p>
+                                    <div className='skill-content'>
+                                        <CircleProgressBar start={progressBarVisible} title={'HTML5'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
+                                        <CircleProgressBar start={progressBarVisible} title={'CSS/SASS'} value={86} size={'150'} color={'rgba(255,105,180,1)'} />
+                                        <CircleProgressBar start={progressBarVisible} title={'JavaScript'} value={88} size={'150'} color={'rgba(255,105,180,1)'} />
+                                        <CircleProgressBar start={progressBarVisible} title={'React JS'} value={87} size={'150'} color={'rgba(255,105,180,1)'} />
+                                    </div>
+                                </div>
+                                <div className='skill-developer'>
+                                    <p>Backend Developer</p>
+                                    <div className="skill-content">
+                                        <CircleProgressBar start={progressBarVisible} title={'Strapi'} value={86} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                                        <CircleProgressBar start={progressBarVisible} title={'Node.js'} value={85} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                                        <CircleProgressBar start={progressBarVisible} title={'Django RESTful'} value={87} size={'150'} color={'rgba(11, 206, 175,1)'} />
+                                        <CircleProgressBar start={progressBarVisible} title={'SQL'} value={84} size={'150'} color={'rgba(11, 206, 175,1)'} />
+
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p>Source Code Control</p>
+                                    <StickProgressBar start={progressBarVisible} title={'Git/hub'} value={87} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                                    <p>Development IDE</p>
+                                    <StickProgressBar start={progressBarVisible} title={'VS Code'} value={90} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                                    <StickProgressBar start={progressBarVisible} title={'VS C++'} value={88} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
+                                    <StickProgressBar start={progressBarVisible} title={'QT C++'} value={91} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
                                 </div>
                             </div>
-                            <div className='skill-developer'>
-                                <p>Backend Developer</p>
-                                <div className="skill-content">
-                                    <CircleProgressBar start={progressBarVisible} title={'Strapi'} value={86} size={'150'} color={'rgba(11, 206, 175,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'Node.js'} value={85} size={'150'} color={'rgba(11, 206, 175,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'Django RESTful'} value={87} size={'150'} color={'rgba(11, 206, 175,1)'} />
-                                    <CircleProgressBar start={progressBarVisible} title={'SQL'} value={84} size={'150'} color={'rgba(11, 206, 175,1)'} />
 
-                                </div>
-                            </div>
+                        </Col>
+                    </Row>
+                </Container>
 
-                            <div>
-                                <p>Source Code Control</p>
-                                <StickProgressBar start={progressBarVisible} title={'Git/hub'} value={87} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
-                                <p>Development IDE</p>
-                                <StickProgressBar start={progressBarVisible} title={'VS Code'} value={90} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
-                                <StickProgressBar start={progressBarVisible} title={'VS C++'} value={88} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
-                                <StickProgressBar start={progressBarVisible} title={'QT C++'} value={91} size={'0.8rem'} color={'rgba(11, 206, 175,1)'} />
-                            </div>
-                        </div>
-
-                    </Col>
-                </Row>
-            </Container>
-
-            <img className='background-image-left' src={colorSharp} />
-        </section >
+                <img className='background-image-left' src={colorSharp} />
+            </section >
+        </IntersectionVisibility>
     )
 }
 

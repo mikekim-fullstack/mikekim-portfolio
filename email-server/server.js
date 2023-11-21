@@ -26,7 +26,7 @@ contactEmail.verify((error) => {
     if (error) {
         console.log(error);
     } else {
-        console.log("Ready to Send");
+        // console.log("Ready to Send");
     }
 });
 
@@ -35,7 +35,7 @@ router.post("/contact", (req, res) => {
     const email = req.body.email;
     const message = req.body.message;
     const phone = req.body.phone;
-    console.log(req.body)
+    // console.log(req.body)
     const mail = {
         from: name,
         to: process.env.REACT_APP_USER_NAME_AUTH,

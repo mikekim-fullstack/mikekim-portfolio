@@ -12,3 +12,63 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.target {
+  opacity: 0;
+  /* transition: opacity 0.5s ease-in-out; */
+}
+
+/* .target.in-view {
+  opacity: 1;
+} */
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    /* border: 1px solid rgba(119, 64, 64, 0); */
+  }
+
+  20% {
+    opacity: 0.15;
+    /* border: 1px solid rgba(119, 64, 64, 0.15); */
+  }
+
+  40% {
+    opacity: 0.25;
+    /* border: 1px solid rgba(119, 64, 64, 0.25); */
+  }
+
+  50% {
+    opacity: 0.3;
+    /* border: 1px solid rgba(119, 64, 64, 0.3); */
+  }
+
+  75% {
+    opacity: 0.45;
+    /* border: 1px solid rgba(119, 64, 64, 0.45); */
+  }
+
+  80% {
+    opacity: 0.5;
+    /* border: 1px solid rgba(119, 64, 64, 0.5); */
+  }
+
+  90% {
+    opacity: 0.8;
+    /* border: 1px solid rgba(119, 64, 64, 0.8); */
+  }
+
+  99% {
+    opacity: 0.9;
+    /* border: 1px solid rgba(119, 64, 64, 0.9); */
+  }
+
+  100% {
+    opacity: 1;
+    /* border: 1px solid rgba(119, 64, 64, 1); */
+  }
+}
+
+.fadeIn {
+  animation: fadeInAnimation 0.6s ease-out forwards;
+}

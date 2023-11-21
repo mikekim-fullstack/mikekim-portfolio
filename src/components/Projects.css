@@ -113,6 +113,10 @@
 
 @media (max-width:390px) {
     .projects {
+        .h2-title {
+            padding-top: 20px;
+        }
+
         /* background: #131515;
         border-radius: 64px;
         text-align: center;

@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import ReadMore from './ReadMore'
 import './About.css'
+import IntersectionVisibility from './IntersectionVisibility'
 const About = () => {
     const content = (
         <div>
@@ -19,16 +20,18 @@ const About = () => {
         </div>
     )
     return (
-        <section id='about' className='about'>
-            <Container>
-                <Row>
-                    <Col className='col'>
-                        <h2 className='h2-title'>About me</h2>
-                        <ReadMore content={content} />
-                    </Col>
-                </Row>
-            </Container>
-        </section>
+        <IntersectionVisibility>
+            <section id='about' className='about'>
+                <Container>
+                    <Row>
+                        <Col className='col'>
+                            <h2 className='h2-title'>About me</h2>
+                            <ReadMore content={content} />
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+        </IntersectionVisibility>
     )
 }
 

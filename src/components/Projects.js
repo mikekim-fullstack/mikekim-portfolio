@@ -28,6 +28,7 @@ import gymImg7 from '../assets/img/gym.png'
 
 import ProjectCards from './ProjectCards';
 import colorSharp2 from "../assets/img/color-sharp2.png";
+import IntersectionVisibility from './IntersectionVisibility';
 const Projects = () => {
     const projects1 = [
         {
@@ -164,121 +165,123 @@ const Projects = () => {
         setCurrentIndex(currentSlide)
     }
     return (
-        <section id='projects' className='projects'>
-            <Container>
-                <Row>
-                    <Col>
-                        <h2 className='h2-title'>Featured Projects</h2>
-                        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br></br>Atque distinctio ducimus corporis eum, exercitationem, obcaecati quae commodi perspiciatis ipsum voluptate hic. Et quia iste incidunt veniam cumque distinctio nostrum quidem?</p> */}
+        <IntersectionVisibility>
+            <section id='projects' className='projects'>
+                <Container>
+                    <Row>
+                        <Col>
+                            <h2 className='h2-title'>Featured Projects</h2>
+                            {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br></br>Atque distinctio ducimus corporis eum, exercitationem, obcaecati quae commodi perspiciatis ipsum voluptate hic. Et quia iste incidunt veniam cumque distinctio nostrum quidem?</p> */}
 
-                        <Tab.Container id='projects-tabs' defaultActiveKey='first'>
-                            <Nav variant="pills" className='nav-pills mb-5 justyfy-conent-center align-items-center' id='pills-tab'>
-                                <Nav.Item>
-                                    <Nav.Link eventKey='first' title='Bootcamp'>LaLaSol</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link eventKey="second" title='E-commerce'>GymEagle</Nav.Link>
-                                </Nav.Item>
-                                {/* <Nav.Item>
+                            <Tab.Container id='projects-tabs' defaultActiveKey='first'>
+                                <Nav variant="pills" className='nav-pills mb-5 justyfy-conent-center align-items-center' id='pills-tab'>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey='first' title='Bootcamp'>LaLaSol</Nav.Link>
+                                    </Nav.Item>
+                                    <Nav.Item>
+                                        <Nav.Link eventKey="second" title='E-commerce'>GymEagle</Nav.Link>
+                                    </Nav.Item>
+                                    {/* <Nav.Item>
                                     <Nav.Link eventKey="third" >Tab 3</Nav.Link>
                                 </Nav.Item> */}
-                            </Nav>
-                            <Tab.Content className='mt-5'>
-                                <Tab.Pane eventKey={'first'}>
-                                    <Swiper className='project-swiper'
-                                        initialSlide={currentIndex}
-                                        onActiveIndexChange={updateIndex}
-                                        grabCursor
-                                        spaceBetween={32}
-                                        slidesPerView={1}
-                                        // loop={true}
-                                        pagination={{
-                                            clickable: true,
-                                            // type: 'progressbar',
-                                        }}
-                                        navigation={true}
-                                        modules={[Pagination, Navigation]}
+                                </Nav>
+                                <Tab.Content className='mt-5'>
+                                    <Tab.Pane eventKey={'first'}>
+                                        <Swiper className='project-swiper'
+                                            initialSlide={currentIndex}
+                                            onActiveIndexChange={updateIndex}
+                                            grabCursor
+                                            spaceBetween={32}
+                                            slidesPerView={1}
+                                            // loop={true}
+                                            pagination={{
+                                                clickable: true,
+                                                // type: 'progressbar',
+                                            }}
+                                            navigation={true}
+                                            modules={[Pagination, Navigation]}
 
-                                        breakpoints={{
-                                            576: {
-                                                slidesPerView: 1,
-                                            },
-                                            768: {
-                                                slidesPerView: 1,
-                                                spaceBetween: 20,
-                                            },
-                                            1100: {
-                                                slidesPerView: 1,
-                                                spaceBetween: 20,
-                                            },
-                                        }}
-                                    >
-                                        {
-                                            projects1.map((project, cardIndex) => {
-                                                return (
-                                                    <SwiperSlide key={cardIndex} className={`project-card ${cardIndex % 2 ? 'active' : ''}`}>
-                                                        <ProjectCards key={project.id} {...project} />
+                                            breakpoints={{
+                                                576: {
+                                                    slidesPerView: 1,
+                                                },
+                                                768: {
+                                                    slidesPerView: 1,
+                                                    spaceBetween: 20,
+                                                },
+                                                1100: {
+                                                    slidesPerView: 1,
+                                                    spaceBetween: 20,
+                                                },
+                                            }}
+                                        >
+                                            {
+                                                projects1.map((project, cardIndex) => {
+                                                    return (
+                                                        <SwiperSlide key={cardIndex} className={`project-card ${cardIndex % 2 ? 'active' : ''}`}>
+                                                            <ProjectCards key={project.id} {...project} />
 
-                                                    </SwiperSlide>
-                                                )
-                                            })
-                                        }
+                                                        </SwiperSlide>
+                                                    )
+                                                })
+                                            }
 
-                                    </Swiper>
+                                        </Swiper>
 
-                                </Tab.Pane>
-                                <Tab.Pane eventKey={'second'} >
-                                    <Swiper className='project-swiper'
-                                        initialSlide={currentIndex}
-                                        onActiveIndexChange={updateIndex}
-                                        grabCursor
-                                        spaceBetween={32}
-                                        slidesPerView={1}
-                                        // loop={true}
-                                        pagination={{
-                                            clickable: true,
-                                            // type: 'progressbar',
-                                        }}
-                                        navigation={true}
-                                        modules={[Pagination, Navigation]}
+                                    </Tab.Pane>
+                                    <Tab.Pane eventKey={'second'} >
+                                        <Swiper className='project-swiper'
+                                            initialSlide={currentIndex}
+                                            onActiveIndexChange={updateIndex}
+                                            grabCursor
+                                            spaceBetween={32}
+                                            slidesPerView={1}
+                                            // loop={true}
+                                            pagination={{
+                                                clickable: true,
+                                                // type: 'progressbar',
+                                            }}
+                                            navigation={true}
+                                            modules={[Pagination, Navigation]}
 
-                                        breakpoints={{
-                                            576: {
-                                                slidesPerView: 1,
-                                            },
-                                            768: {
-                                                slidesPerView: 1,
-                                                spaceBetween: 20,
-                                            },
-                                            1100: {
-                                                slidesPerView: 1,
-                                                spaceBetween: 20,
-                                            },
-                                        }}
-                                    >
-                                        {
-                                            projects2.map((project, cardIndex) => {
-                                                return (
-                                                    <SwiperSlide key={cardIndex} className={`project-card ${cardIndex % 2 ? 'active' : ''}`}>
-                                                        <ProjectCards key={project.id} {...project} />
+                                            breakpoints={{
+                                                576: {
+                                                    slidesPerView: 1,
+                                                },
+                                                768: {
+                                                    slidesPerView: 1,
+                                                    spaceBetween: 20,
+                                                },
+                                                1100: {
+                                                    slidesPerView: 1,
+                                                    spaceBetween: 20,
+                                                },
+                                            }}
+                                        >
+                                            {
+                                                projects2.map((project, cardIndex) => {
+                                                    return (
+                                                        <SwiperSlide key={cardIndex} className={`project-card ${cardIndex % 2 ? 'active' : ''}`}>
+                                                            <ProjectCards key={project.id} {...project} />
 
-                                                    </SwiperSlide>
-                                                )
-                                            })
-                                        }
+                                                        </SwiperSlide>
+                                                    )
+                                                })
+                                            }
 
-                                    </Swiper>
-                                </Tab.Pane>
-                            </Tab.Content>
-                        </Tab.Container>
+                                        </Swiper>
+                                    </Tab.Pane>
+                                </Tab.Content>
+                            </Tab.Container>
 
-                    </Col>
-                </Row>
-            </Container>
+                        </Col>
+                    </Row>
+                </Container>
 
-            <img className='background-image-right' src={colorSharp2} />
+                <img className='background-image-right' src={colorSharp2} />
 
-        </section>
+            </section>
+        </IntersectionVisibility>
     )
 }
 export default Projects

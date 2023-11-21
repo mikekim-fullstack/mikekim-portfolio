@@ -62,6 +62,7 @@ const NavBar = () => {
     const [scrollDown, setScrollDown] = useState(false)
     const matches = useMediaQuery('(max-width: 768px)');
     let prevScrollY = 0
+    /*
     useEffect(() => {
         const menuLists = []
         navLists.forEach((list) => menuLists.push(document.getElementById(list.href)))
@@ -90,6 +91,7 @@ const NavBar = () => {
         window.addEventListener('scroll', scrollEvent)
         return () => window.removeEventListener('scroll', scrollEvent)
     }, [])
+    */
     return (
         // <header className={`header-nav ${scrolledTop && !matches ? 'scrolled' : ''} ${matches ? (scrollDown ? '' : 'hidden') : ''}`}>
         <header className={`header-nav ${scrolledTop && !matches ? 'scrolled' : ''}`}>

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import TimeLineCard from './TimeLineCard'
 import './Education.css'
+import IntersectionVisibility from './IntersectionVisibility'
 const Education = () => {
     const colorTheme = {
         '--card-bg-color': '#1f3344a6',
@@ -44,33 +45,66 @@ const Education = () => {
         },
 
     ]
+    const targetRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        // When the target enters the viewport
+                        entry.target.classList.add("in-view");
+                    } else {
+                        // When the target exits the viewport
+                        entry.target.classList.remove("in-view");
+                    }
+                });
+            },
+            {
+                threshold: 0.2 // Trigger when 50% of the target is visible
+            }
+        );
+
+        if (targetRef.current) {
+            observer.observe(targetRef.current);
+        }
+
+        return () => {
+            if (targetRef.current) {
+                observer.unobserve(targetRef.current);
+            }
+        };
+    }, []);
     return (
-        <section id='education' className='education'>
-            <Container>
-                <Row>
-                    <Col>
-                        <h2 className='h2-title'>Education</h2>
+        // 
+        <IntersectionVisibility>
+            <section id='education' className='education'>
+                <Container>
+                    <Row>
+                        <Col>
+                            <h2 className='h2-title'>Education</h2>
 
-                        <div className='education-container'>
-                            {
-                                experienceData.map((data) => (
-                                    <div className='education-card' key={data.id}>
-                                        <h5 className='period'>{data.period}</h5>
-                                        <h4 className='role'>{data.role}</h4>
-                                        <a href={data.site} target='_blank' className='company'>{data.company}</a>
-                                        <p className='description'>{data.description}</p>
-                                    </div>
-                                )
-                                    // console.log(data)
-                                    // return <TimeLineCard key={data.id} {...data} style={colorTheme} />
-                                )
-                            }
-                        </div>
+                            <div className='education-container'>
+                                {
+                                    experienceData.map((data) => (
+                                        <div className='education-card' key={data.id}>
+                                            <h5 className='period'>{data.period}</h5>
+                                            <h4 className='role'>{data.role}</h4>
+                                            <a href={data.site} target='_blank' className='company'>{data.company}</a>
+                                            <p className='description'>{data.description}</p>
+                                        </div>
+                                    )
+                                        // console.log(data)
+                                        // return <TimeLineCard key={data.id} {...data} style={colorTheme} />
+                                    )
+                                }
+                            </div>
 
-                    </Col>
-                </Row>
-            </Container>
-        </section>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
+        </IntersectionVisibility>
     )
 }
 

@@ -11,6 +11,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import IntersectionVisibility from './IntersectionVisibility';
 const Experience = () => {
     const experienceData = [
         {
@@ -110,66 +111,68 @@ const Experience = () => {
     const updateIndex = (swiperInstance) => {
         if (swiperInstance === null) return;
         const currentSlide = swiperInstance?.activeIndex;
-        console.log('swiper', currentSlide)
+        // console.log('swiper', currentSlide)
         setCurrentIndex(currentSlide)
     }
     return (
-        <section id='experience' className='experience'>
-            <h2 className='h2-title'>Experience</h2>
-            <Swiper className='experience-swiper'
-                initialSlide={currentIndex}
-                onActiveIndexChange={updateIndex}
-                grabCursor
-                spaceBetween={32}
-                slidesPerView={1}
-                // loop={true}
-                pagination={{
-                    clickable: true,
-                    // type: 'progressbar',
-                }}
-                navigation={true}
-                modules={[Pagination, Navigation]}
+        <IntersectionVisibility>
+            <section id='experience' className='experience'>
+                <h2 className='h2-title'>Experience</h2>
+                <Swiper className='experience-swiper'
+                    initialSlide={currentIndex}
+                    onActiveIndexChange={updateIndex}
+                    grabCursor
+                    spaceBetween={32}
+                    slidesPerView={1}
+                    // loop={true}
+                    pagination={{
+                        clickable: true,
+                        // type: 'progressbar',
+                    }}
+                    navigation={true}
+                    modules={[Pagination, Navigation]}
 
-                breakpoints={{
-                    576: {
-                        slidesPerView: 1,
-                    },
-                    768: {
-                        slidesPerView: 2,
-                        spaceBetween: 20,
-                    },
-                    1100: {
-                        slidesPerView: 3,
-                        spaceBetween: 20,
-                    },
-                }}
-            >
-                {
-                    experienceData.map((data, cardIndex) => {
-                        return (
-                            <SwiperSlide key={cardIndex} className={`experience-card ${cardIndex % 2 ? 'active' : ''}`}>
-                                {/* {console.log('cardIndex', currentIndex, cardIndex)} */}
-                                <h5 className='period'>{data.period}</h5>
-                                <h4 className='role'>{data.role}</h4>
-                                <a href={data.site} target='_blank' className='company'>{data.company}</a>
-                                <p className='description'>{data.description}</p>
-                                {data.responsibility && <>
-                                    <h5 className='responsibility'>Responsibilities</h5>
-                                    <ul className='lists'>
-                                        {
-                                            data.responsibility.map((res, index) => <li key={index}>{res}</li>)
-                                        }
-                                    </ul></>
-                                }
-                            </SwiperSlide>
-                        )
-                    })
-                }
+                    breakpoints={{
+                        576: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1100: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                    }}
+                >
+                    {
+                        experienceData.map((data, cardIndex) => {
+                            return (
+                                <SwiperSlide key={cardIndex} className={`experience-card ${cardIndex % 2 ? 'active' : ''}`}>
+                                    {/* {console.log('cardIndex', currentIndex, cardIndex)} */}
+                                    <h5 className='period'>{data.period}</h5>
+                                    <h4 className='role'>{data.role}</h4>
+                                    <a href={data.site} target='_blank' className='company'>{data.company}</a>
+                                    <p className='description'>{data.description}</p>
+                                    {data.responsibility && <>
+                                        <h5 className='responsibility'>Responsibilities</h5>
+                                        <ul className='lists'>
+                                            {
+                                                data.responsibility.map((res, index) => <li key={index}>{res}</li>)
+                                            }
+                                        </ul></>
+                                    }
+                                </SwiperSlide>
+                            )
+                        })
+                    }
 
-            </Swiper>
+                </Swiper>
 
 
-        </section>
+            </section>
+        </IntersectionVisibility>
     )
 }
 
